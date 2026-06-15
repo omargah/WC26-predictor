@@ -1,0 +1,70 @@
+================================================================================
+INSPECCIÓN MODELO LEGACY CÓRNERS/TARJETAS
+================================================================================
+Ruta: /content/drive/MyDrive/mundial-2026-predictor/models/corners_cards_poisson_stable.joblib
+Tipo principal: <class 'dict'>
+
+El modelo es un diccionario.
+
+Llaves principales:
+  - created_at: <class 'str'>
+  - model_type: <class 'str'>
+  - warning: <class 'str'>
+  - corners: <class 'dict'>
+  - yellow_cards: <class 'dict'>
+  - corners_lines: <class 'list'>
+  - cards_lines: <class 'list'>
+
+Detalle por llave:
+--------------------------------------------------------------------------------
+KEY: created_at
+TYPE: <class 'str'>
+VALUE PREVIEW: 2026-06-10 13:13:43
+--------------------------------------------------------------------------------
+KEY: model_type
+TYPE: <class 'str'>
+VALUE PREVIEW: stable_poisson_corners_cards
+--------------------------------------------------------------------------------
+KEY: warning
+TYPE: <class 'str'>
+VALUE PREVIEW: Modelo estable pero todavía experimental por cobertura limitada: 290 partidos.
+--------------------------------------------------------------------------------
+KEY: corners
+TYPE: <class 'dict'>
+DICT KEYS: ['market_name', 'target_local', 'target_visitante', 'features', 'medians', 'scaler', 'model_local', 'model_visitante', 'alpha', 'max_side_lambda', 'metrics']
+    market_name: <class 'str'>
+    target_local: <class 'str'>
+    target_visitante: <class 'str'>
+    features: <class 'list'>
+    medians: <class 'pandas.core.series.Series'>
+    scaler: <class 'sklearn.preprocessing._data.StandardScaler'>
+    model_local: <class 'sklearn.linear_model._glm.glm.PoissonRegressor'>
+    model_visitante: <class 'sklearn.linear_model._glm.glm.PoissonRegressor'>
+    alpha: <class 'float'>
+    max_side_lambda: <class 'float'>
+    metrics: <class 'dict'>
+--------------------------------------------------------------------------------
+KEY: yellow_cards
+TYPE: <class 'dict'>
+DICT KEYS: ['market_name', 'target_local', 'target_visitante', 'features', 'medians', 'scaler', 'model_local', 'model_visitante', 'alpha', 'max_side_lambda', 'metrics']
+    market_name: <class 'str'>
+    target_local: <class 'str'>
+    target_visitante: <class 'str'>
+    features: <class 'list'>
+    medians: <class 'pandas.core.series.Series'>
+    scaler: <class 'sklearn.preprocessing._data.StandardScaler'>
+    model_local: <class 'sklearn.linear_model._glm.glm.PoissonRegressor'>
+    model_visitante: <class 'sklearn.linear_model._glm.glm.PoissonRegressor'>
+    alpha: <class 'float'>
+    max_side_lambda: <class 'float'>
+    metrics: <class 'dict'>
+--------------------------------------------------------------------------------
+KEY: corners_lines
+TYPE: <class 'list'>
+LEN: 5
+PREVIEW: [7.5, 8.5, 9.5, 10.5, 11.5]
+--------------------------------------------------------------------------------
+KEY: cards_lines
+TYPE: <class 'list'>
+LEN: 5
+PREVIEW: [2.5, 3.5, 4.5, 5.5, 6.5]

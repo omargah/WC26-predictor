@@ -1,0 +1,7 @@
+RECUPERACIÓN LEGACY FASE 4.7 / 4.8
+======================================================================
+Proyecto viejo: /content/drive/MyDrive/Mundial_2026_Model
+Proyecto nuevo: /content/drive/MyDrive/mundial-2026-predictor
+Modelo legacy encontrado: True
+Métricas legacy encontradas: False
+Modelo nuevo: /content/drive/MyDrive/mundial-2026-predictor/models/corners_cards_poisson_stable.joblib

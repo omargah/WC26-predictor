@@ -1,0 +1,10 @@
+round,opponent,count,conditional_probability,round_order
+Round of 32,Ivory Coast,2,0.4,1
+Round of 32,Bosnia and Herzegovina,1,0.2,1
+Round of 32,France,1,0.2,1
+Round of 32,Sweden,1,0.2,1
+Round of 16,Brazil,1,0.3333333333333333,2
+Round of 16,England,1,0.3333333333333333,2
+Round of 16,Uzbekistan,1,0.3333333333333333,2
+Quarterfinal,Japan,1,1.0,3
+Semifinal,Argentina,1,1.0,4

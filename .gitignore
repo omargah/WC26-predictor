@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Sistema
+.DS_Store
+
+# Secretos
+.env
+secrets.json
+kaggle.json
+*.key
+
+# Datos generados o pesados
+data/raw/*
+data/processed/*
+data/features/*
+data/predictions/*
+data/cache/*
+models/*
+outputs/*
+checkpoints/*
+reports/generated/*
+
+# Mantener carpetas vacías importantes
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/features/.gitkeep
+!data/predictions/.gitkeep
+!data/cache/.gitkeep
+!models/.gitkeep
+!outputs/.gitkeep
+!checkpoints/.gitkeep
+
+# Modelos entrenados
+*.joblib
+*.pkl
+*.pickle
+
+# Archivos grandes
+*.parquet
+*.feather
+*.h5
+*.zip
+*.tar.gz

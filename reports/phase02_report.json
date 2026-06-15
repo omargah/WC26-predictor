@@ -1,0 +1,126 @@
+{
+    "created_at": "2026-06-15 17:57:24",
+    "n_matches_raw_model": 15828,
+    "n_matches_strict": 15822,
+    "n_team_match_rows": 31656,
+    "n_columns": 159,
+    "n_feature_columns": 146,
+    "date_min": "2010-01-02 00:00:00",
+    "date_max": "2026-06-14 00:00:00",
+    "strict_report": {
+        "n_original": 15828,
+        "n_leak_L": 4,
+        "n_leak_V": 2,
+        "n_leak_total": 6,
+        "n_final": 15822,
+        "leak_after_L": 0,
+        "leak_after_V": 0
+    },
+    "top_null_features": [
+        {
+            "feature": "h2h_total_goals_avg",
+            "null_rate": 0.3453419289596764
+        },
+        {
+            "feature": "h2h_goals_away_avg",
+            "null_rate": 0.3453419289596764
+        },
+        {
+            "feature": "h2h_goals_home_avg",
+            "null_rate": 0.3453419289596764
+        },
+        {
+            "feature": "h2h_home_win_rate",
+            "null_rate": 0.3453419289596764
+        },
+        {
+            "feature": "diff_win_avg_10",
+            "null_rate": 0.015168752370117557
+        },
+        {
+            "feature": "diff_points_avg_10",
+            "null_rate": 0.015168752370117557
+        },
+        {
+            "feature": "diff_loss_avg_10",
+            "null_rate": 0.015168752370117557
+        },
+        {
+            "feature": "diff_draw_avg_10",
+            "null_rate": 0.015168752370117557
+        },
+        {
+            "feature": "diff_failed_to_score_avg_10",
+            "null_rate": 0.015168752370117557
+        },
+        {
+            "feature": "diff_clean_sheet_avg_10",
+            "null_rate": 0.015168752370117557
+        },
+        {
+            "feature": "diff_goal_diff_avg_10",
+            "null_rate": 0.015168752370117557
+        },
+        {
+            "feature": "diff_goals_against_avg_10",
+            "null_rate": 0.015168752370117557
+        },
+        {
+            "feature": "diff_goals_for_avg_10",
+            "null_rate": 0.015168752370117557
+        },
+        {
+            "feature": "diff_weighted_points_avg_5",
+            "null_rate": 0.015168752370117557
+        },
+        {
+            "feature": "diff_over_2_5_avg_10",
+            "null_rate": 0.015168752370117557
+        },
+        {
+            "feature": "diff_btts_avg_10",
+            "null_rate": 0.015168752370117557
+        },
+        {
+            "feature": "diff_draw_avg_5",
+            "null_rate": 0.015168752370117557
+        },
+        {
+            "feature": "diff_failed_to_score_avg_5",
+            "null_rate": 0.015168752370117557
+        },
+        {
+            "feature": "diff_over_2_5_avg_5",
+            "null_rate": 0.015168752370117557
+        },
+        {
+            "feature": "diff_btts_avg_5",
+            "null_rate": 0.015168752370117557
+        },
+        {
+            "feature": "diff_points_sum_5",
+            "null_rate": 0.015168752370117557
+        },
+        {
+            "feature": "diff_clean_sheet_avg_5",
+            "null_rate": 0.015168752370117557
+        },
+        {
+            "feature": "diff_goal_diff_avg_5",
+            "null_rate": 0.015168752370117557
+        },
+        {
+            "feature": "diff_goals_against_avg_5",
+            "null_rate": 0.015168752370117557
+        },
+        {
+            "feature": "diff_points_avg_5",
+            "null_rate": 0.015168752370117557
+        }
+    ],
+    "output_files": {
+        "null_report": "/content/drive/MyDrive/mundial-2026-predictor/reports/phase02_null_report.csv",
+        "team_match_history": "/content/drive/MyDrive/mundial-2026-predictor/data/features/team_match_history.parquet",
+        "modeling_dataset": "/content/drive/MyDrive/mundial-2026-predictor/data/features/modeling_dataset.parquet"
+    }
+}

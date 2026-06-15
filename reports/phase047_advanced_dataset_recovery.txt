@@ -1,0 +1,12 @@
+RECUPERACIÓN DATASETS AVANZADOS LEGACY
+======================================================================
+Proyecto viejo: /content/drive/MyDrive/Mundial_2026_Model
+Proyecto nuevo: /content/drive/MyDrive/mundial-2026-predictor
+
+Copiados:
+  - modeling_dataset_advanced.parquet
+  - modeling_dataset_advanced.csv
+  - team_advanced_history.parquet
+
+Faltantes:
+  - team_advanced_history.csv

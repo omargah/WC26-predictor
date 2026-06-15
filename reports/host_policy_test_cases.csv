@@ -1,0 +1,9 @@
+home_team,away_team,round_name,venue_country,scenario,home_multiplier,home_label,home_explanation,away_multiplier,away_label,net_host_advantage
+Mexico,South Africa,Group Stage,Mexico,base,1.0,full_home_group,Anfitrión en su país durante fase de grupos.,0.0,neutral_base,1.0
+Canada,Bosnia and Herzegovina,Group Stage,Canada,base,1.0,full_home_group,Anfitrión en su país durante fase de grupos.,0.0,neutral_base,1.0
+United States,Paraguay,Group Stage,United States,base,1.0,full_home_group,Anfitrión en su país durante fase de grupos.,0.0,neutral_base,1.0
+Mexico,France,Quarterfinal,United States,base,0.0,neutral_base,Desde cuartos o fuera de su país: neutral en escenario base.,0.0,neutral_base,0.0
+Mexico,France,Quarterfinal,United States,diaspora,0.15,mexico_us_diaspora_small,Apoyo de afición mexicana en EE.UU.; no es localía completa.,0.0,neutral_diaspora,0.15
+Canada,Brazil,Round of 16,Canada,base,0.35,reduced_home_round16,Anfitrión en su país en octavos; ventaja reducida.,0.0,neutral_base,0.35
+United States,Germany,Final,United States,base,0.0,neutral_base,Desde cuartos o fuera de su país: neutral en escenario base.,0.0,neutral_base,0.0
+United States,Germany,Final,United States,diaspora,0.2,usa_us_late_small,Apoyo local estadounidense tardío; ventaja pequeña y capada.,0.0,neutral_diaspora,0.2

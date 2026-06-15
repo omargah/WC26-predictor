@@ -1,0 +1,5 @@
+case_id,home_team,away_team,legacy_available,legacy_source,legacy_corners_total,legacy_cards_total,joblib_available,joblib_source,joblib_reason,joblib_corners_total,joblib_cards_total,delta_joblib_vs_legacy_corners_total,delta_joblib_vs_legacy_cards_total
+MEX_RSA_2026_GROUP_FULL,Mexico,South Africa,True,legacy_benchmark_compatible,8.714,2.997,True,legacy_joblib_real,,8.026505083191154,3.2761460824455373,-0.6874949168088467,0.2791460824455374
+CZE_KOR_2026_GROUP_FULL,Czechia,South Korea,True,legacy_benchmark_compatible,8.864,3.391,True,legacy_joblib_real,,8.120418444803217,3.622530183841027,-0.7435815551967835,0.23153018384102708
+CAN_BIH_2026_GROUP_GOALS,Canada,Bosnia and Herzegovina,False,legacy_benchmark_without_corners_cards,,,True,legacy_joblib_real,,7.865389800408438,2.49156066081781,,
+USA_PAR_2026_GROUP_FULL,United States,Paraguay,True,legacy_benchmark_compatible,6.686,3.84,True,legacy_joblib_real,,9.06960406035822,3.6109123088351183,2.38360406035822,-0.2290876911648816

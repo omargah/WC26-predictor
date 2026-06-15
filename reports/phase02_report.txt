@@ -1,0 +1,43 @@
+REPORTE FASE 2 — FEATURE ENGINEERING
+======================================================================
+Creado: 2026-06-15 17:57:24
+Partidos antes de strict: 15828
+Partidos strict finales: 15822
+Filas equipo-partido: 31656
+Columnas totales: 159
+Columnas candidatas de features: 146
+Rango fechas: 2010-01-02 00:00:00 → 2026-06-14 00:00:00
+
+Validación strict anti-leakage:
+  - Leakage lado local: 4
+  - Leakage lado visitante: 2
+  - Filas únicas eliminadas: 6
+  - Leakage restante local: 0
+  - Leakage restante visitante: 0
+
+Top features con mayor tasa de nulos:
+  - h2h_total_goals_avg: 34.53%
+  - h2h_goals_away_avg: 34.53%
+  - h2h_goals_home_avg: 34.53%
+  - h2h_home_win_rate: 34.53%
+  - diff_win_avg_10: 1.52%
+  - diff_points_avg_10: 1.52%
+  - diff_loss_avg_10: 1.52%
+  - diff_draw_avg_10: 1.52%
+  - diff_failed_to_score_avg_10: 1.52%
+  - diff_clean_sheet_avg_10: 1.52%
+  - diff_goal_diff_avg_10: 1.52%
+  - diff_goals_against_avg_10: 1.52%
+  - diff_goals_for_avg_10: 1.52%
+  - diff_weighted_points_avg_5: 1.52%
+  - diff_over_2_5_avg_10: 1.52%
+  - diff_btts_avg_10: 1.52%
+  - diff_draw_avg_5: 1.52%
+  - diff_failed_to_score_avg_5: 1.52%
+  - diff_over_2_5_avg_5: 1.52%
+  - diff_btts_avg_5: 1.52%
+  - diff_points_sum_5: 1.52%
+  - diff_clean_sheet_avg_5: 1.52%
+  - diff_goal_diff_avg_5: 1.52%
+  - diff_goals_against_avg_5: 1.52%
+  - diff_points_avg_5: 1.52%

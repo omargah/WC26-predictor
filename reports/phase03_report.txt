@@ -1,0 +1,23 @@
+REPORTE FASE 3 — POISSON + DIXON-COLES COMPATIBLE
+======================================================================
+Creado: 2026-06-15 19:08:28
+Filas totales: 15,822
+Features usadas: 144
+Train validación: 12,657
+Test validación: 3,165
+Train rango: 2010-01-02 → 2023-07-09
+Test rango: 2023-07-09 → 2026-06-14
+
+Métricas:
+  - n_train_test_matches: 3165
+  - test_date_min: 2023-07-09
+  - test_date_max: 2026-06-14
+  - mae_goles_local: 1.0327151115174018
+  - mae_goles_visitante: 0.8592548031695458
+  - mae_goles_total: 1.4083101771127433
+  - accuracy_1x2: 0.6015797788309637
+  - log_loss_1x2: 0.8696462816986988
+  - brier_multiclass_1x2: 0.5113914706067886
+
+Nota:
+Se validó con split temporal y se guardó modelo final entrenado con todo el histórico.

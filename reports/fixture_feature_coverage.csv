@@ -1,0 +1,73 @@
+group,matchday,date,home_team,away_team,exists_direct,exists_reverse,exists_any
+A,1,2026-06-11,Mexico,South Africa,True,False,True
+A,1,2026-06-11,South Korea,Czechia,True,False,True
+A,2,2026-06-18,Czechia,South Africa,False,False,False
+A,2,2026-06-18,Mexico,South Korea,False,False,False
+A,3,2026-06-24,Czechia,Mexico,False,False,False
+A,3,2026-06-24,South Africa,South Korea,False,False,False
+B,1,2026-06-12,Canada,Bosnia and Herzegovina,True,False,True
+B,1,2026-06-13,Qatar,Switzerland,True,False,True
+B,2,2026-06-18,Switzerland,Bosnia and Herzegovina,False,False,False
+B,2,2026-06-18,Canada,Qatar,False,False,False
+B,3,2026-06-24,Switzerland,Canada,False,False,False
+B,3,2026-06-24,Bosnia and Herzegovina,Qatar,False,False,False
+C,1,2026-06-13,Brazil,Morocco,True,False,True
+C,1,2026-06-13,Haiti,Scotland,True,False,True
+C,2,2026-06-19,Scotland,Morocco,False,False,False
+C,2,2026-06-19,Brazil,Haiti,False,False,False
+C,3,2026-06-24,Scotland,Brazil,False,False,False
+C,3,2026-06-24,Morocco,Haiti,False,False,False
+D,1,2026-06-12,United States,Paraguay,True,False,True
+D,1,2026-06-14,Australia,Turkey,False,False,False
+D,2,2026-06-19,United States,Australia,False,False,False
+D,2,2026-06-19,Turkey,Paraguay,False,False,False
+D,3,2026-06-25,Turkey,United States,False,False,False
+D,3,2026-06-25,Paraguay,Australia,False,False,False
+E,1,2026-06-14,Germany,Curacao,True,False,True
+E,1,2026-06-14,Ivory Coast,Ecuador,True,False,True
+E,2,2026-06-20,Germany,Ivory Coast,False,False,False
+E,2,2026-06-20,Ecuador,Curacao,False,False,False
+E,3,2026-06-25,Ecuador,Germany,False,False,False
+E,3,2026-06-25,Curacao,Ivory Coast,False,False,False
+F,1,2026-06-14,Netherlands,Japan,True,False,True
+F,1,2026-06-14,Sweden,Tunisia,True,False,True
+F,2,2026-06-20,Netherlands,Sweden,False,False,False
+F,2,2026-06-21,Tunisia,Japan,False,False,False
+F,3,2026-06-25,Tunisia,Netherlands,False,False,False
+F,3,2026-06-25,Japan,Sweden,False,False,False
+G,1,2026-06-15,Belgium,Egypt,False,False,False
+G,1,2026-06-15,Iran,New Zealand,False,False,False
+G,2,2026-06-21,Belgium,Iran,False,False,False
+G,2,2026-06-21,New Zealand,Egypt,False,False,False
+G,3,2026-06-26,New Zealand,Belgium,False,False,False
+G,3,2026-06-26,Egypt,Iran,False,False,False
+H,1,2026-06-15,Spain,Cape Verde,False,False,False
+H,1,2026-06-15,Saudi Arabia,Uruguay,False,False,False
+H,2,2026-06-21,Spain,Saudi Arabia,False,False,False
+H,2,2026-06-21,Uruguay,Cape Verde,False,False,False
+H,3,2026-06-26,Uruguay,Spain,False,False,False
+H,3,2026-06-26,Cape Verde,Saudi Arabia,False,False,False
+I,1,2026-06-16,France,Senegal,False,False,False
+I,1,2026-06-16,Iraq,Norway,False,False,False
+I,2,2026-06-22,France,Iraq,False,False,False
+I,2,2026-06-22,Norway,Senegal,False,False,False
+I,3,2026-06-26,Norway,France,False,False,False
+I,3,2026-06-26,Senegal,Iraq,False,False,False
+J,1,2026-06-16,Argentina,Algeria,False,False,False
+J,1,2026-06-17,Austria,Jordan,False,False,False
+J,2,2026-06-22,Argentina,Austria,False,False,False
+J,2,2026-06-22,Jordan,Algeria,False,False,False
+J,3,2026-06-27,Jordan,Argentina,False,False,False
+J,3,2026-06-27,Algeria,Austria,False,False,False
+K,1,2026-06-17,Portugal,DR Congo,False,False,False
+K,1,2026-06-17,Uzbekistan,Colombia,False,False,False
+K,2,2026-06-23,Portugal,Uzbekistan,False,False,False
+K,2,2026-06-23,Colombia,DR Congo,False,False,False
+K,3,2026-06-27,Colombia,Portugal,False,False,False
+K,3,2026-06-27,DR Congo,Uzbekistan,False,False,False
+L,1,2026-06-17,England,Croatia,False,False,False
+L,1,2026-06-17,Ghana,Panama,False,False,False
+L,2,2026-06-23,England,Ghana,False,False,False
+L,2,2026-06-23,Panama,Croatia,False,False,False
+L,3,2026-06-27,Panama,England,False,False,False
+L,3,2026-06-27,Croatia,Ghana,False,False,False

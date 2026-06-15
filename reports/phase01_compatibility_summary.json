@@ -1,0 +1,9 @@
+{
+    "rows": 15828,
+    "columns": 15,
+    "date_min": "2010-01-02 00:00:00",
+    "date_max": "2026-06-14 00:00:00",
+    "teams_unique": 312,
+    "output_parquet": "/content/drive/MyDrive/mundial-2026-predictor/data/processed/partidos_selecciones.parquet",
+    "output_csv": "/content/drive/MyDrive/mundial-2026-predictor/data/processed/partidos_selecciones.csv"
+}

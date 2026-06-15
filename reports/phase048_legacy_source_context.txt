@@ -1,0 +1,947 @@
+
+
+====================================================================================================0001: 
+0002: # -*- coding: utf-8 -*-
+0003: 
+0004: """
+0005: FASE 4.8 — Predictor completo de partido
+0006: 
+0007: Combina:
+0008:     - Modelo de goles Poisson + Dixon-Coles
+0009:     - Modelo estable de córners
+0010:     - Modelo estable de tarjetas amarillas
+0011: 
+0012: Entradas:
+0013:     data/features/modeling_dataset_advanced.parquet
+
+0009:     - Modelo estable de córners
+0010:     - Modelo estable de tarjetas amarillas
+0011: 
+0012: Entradas:
+0013:     data/features/modeling_dataset_advanced.parquet
+0014:     data/features/team_match_history.parquet
+0015:     data/features/team_advanced_history.parquet
+0016:     models/poisson_dc_base.joblib
+0017:     models/corners_cards_poisson_stable.joblib
+0018: 
+0019: Salida:
+0020:     Reporte completo de partido.
+0021: """
+0022: 
+0023: from pathlib import Path
+0024: from datetime import datetime
+0025: import hashlib
+
+0024: from datetime import datetime
+0025: import hashlib
+0026: import math
+0027: import numpy as np
+0028: import pandas as pd
+0029: import joblib
+0030: from scipy.stats import poisson
+0031: 
+0032: from phase03_poisson_dc import predict_from_feature_row
+0033: 
+0034: 
+0035: DEFAULT_PROJECT_ROOT = Path("/content/drive/MyDrive/Mundial_2026_Model")
+0036: 
+0037: 
+0038: # ============================================================
+0039: # UTILIDADES
+0040: # ============================================================
+
+0087: 
+0088: def load_assets(project_root=DEFAULT_PROJECT_ROOT):
+0089:     project_root = Path(project_root)
+0090: 
+0091:     df_adv = pd.read_parquet(project_root / "data/features/modeling_dataset_advanced.parquet")
+0092:     team_history = pd.read_parquet(project_root / "data/features/team_match_history.parquet")
+0093:     team_adv_history = pd.read_parquet(project_root / "data/features/team_advanced_history.parquet")
+0094: 
+0095:     goal_bundle = joblib.load(project_root / "models/poisson_dc_base.joblib")
+0096:     corners_cards_bundle = joblib.load(project_root / "models/corners_cards_poisson_stable.joblib")
+0097: 
+0098:     df_adv["fecha"] = pd.to_datetime(df_adv["fecha"], errors="coerce")
+0099:     team_history["fecha"] = pd.to_datetime(team_history["fecha"], errors="coerce")
+0100:     team_adv_history["fecha"] = pd.to_datetime(team_adv_history["fecha"], errors="coerce")
+0101: 
+0102:     df_adv = df_adv[df_adv["fecha"].notna()].sort_values("fecha").reset_index(drop=True)
+0103:     team_history = team_history[team_history["fecha"].notna()].sort_values("fecha").reset_index(drop=True)
+
+0088: def load_assets(project_root=DEFAULT_PROJECT_ROOT):
+0089:     project_root = Path(project_root)
+0090: 
+0091:     df_adv = pd.read_parquet(project_root / "data/features/modeling_dataset_advanced.parquet")
+0092:     team_history = pd.read_parquet(project_root / "data/features/team_match_history.parquet")
+0093:     team_adv_history = pd.read_parquet(project_root / "data/features/team_advanced_history.parquet")
+0094: 
+0095:     goal_bundle = joblib.load(project_root / "models/poisson_dc_base.joblib")
+0096:     corners_cards_bundle = joblib.load(project_root / "models/corners_cards_poisson_stable.joblib")
+0097: 
+0098:     df_adv["fecha"] = pd.to_datetime(df_adv["fecha"], errors="coerce")
+0099:     team_history["fecha"] = pd.to_datetime(team_history["fecha"], errors="coerce")
+0100:     team_adv_history["fecha"] = pd.to_datetime(team_adv_history["fecha"], errors="coerce")
+0101: 
+0102:     df_adv = df_adv[df_adv["fecha"].notna()].sort_values("fecha").reset_index(drop=True)
+0103:     team_history = team_history[team_history["fecha"].notna()].sort_values("fecha").reset_index(drop=True)
+0104:     team_adv_history = team_adv_history[team_adv_history["fecha"].notna()].sort_values("fecha").reset_index(drop=True)
+
+0098:     df_adv["fecha"] = pd.to_datetime(df_adv["fecha"], errors="coerce")
+0099:     team_history["fecha"] = pd.to_datetime(team_history["fecha"], errors="coerce")
+0100:     team_adv_history["fecha"] = pd.to_datetime(team_adv_history["fecha"], errors="coerce")
+0101: 
+0102:     df_adv = df_adv[df_adv["fecha"].notna()].sort_values("fecha").reset_index(drop=True)
+0103:     team_history = team_history[team_history["fecha"].notna()].sort_values("fecha").reset_index(drop=True)
+0104:     team_adv_history = team_adv_history[team_adv_history["fecha"].notna()].sort_values("fecha").reset_index(drop=True)
+0105: 
+0106:     return df_adv, team_history, team_adv_history, goal_bundle, corners_cards_bundle
+0107: 
+0108: 
+0109: # ============================================================
+0110: # FEATURES BASE DE GOLES
+0111: # ============================================================
+0112: 
+0113: def _streak_from_history(values, condition):
+0114:     streak = 0
+
+0325: # ============================================================
+0326: # FEATURES AVANZADAS FUTURAS
+0327: # ============================================================
+0328: 
+0329: def compute_advanced_pre_features(team_adv_history, equipo, fecha_partido, side_suffix):
+0330:     fecha_partido = pd.to_datetime(fecha_partido)
+0331: 
+0332:     stat_cols = [
+0333:         "corners_for",
+0334:         "corners_against",
+0335:         "yellow_cards_for",
+0336:         "yellow_cards_against",
+0337:         "red_cards_for",
+0338:         "red_cards_against",
+0339:         "fouls_for",
+0340:         "fouls_against",
+0341:         "shots_for",
+
+0326: # FEATURES AVANZADAS FUTURAS
+0327: # ============================================================
+0328: 
+0329: def compute_advanced_pre_features(team_adv_history, equipo, fecha_partido, side_suffix):
+0330:     fecha_partido = pd.to_datetime(fecha_partido)
+0331: 
+0332:     stat_cols = [
+0333:         "corners_for",
+0334:         "corners_against",
+0335:         "yellow_cards_for",
+0336:         "yellow_cards_against",
+0337:         "red_cards_for",
+0338:         "red_cards_against",
+0339:         "fouls_for",
+0340:         "fouls_against",
+0341:         "shots_for",
+0342:         "shots_against",
+
+0327: # ============================================================
+0328: 
+0329: def compute_advanced_pre_features(team_adv_history, equipo, fecha_partido, side_suffix):
+0330:     fecha_partido = pd.to_datetime(fecha_partido)
+0331: 
+0332:     stat_cols = [
+0333:         "corners_for",
+0334:         "corners_against",
+0335:         "yellow_cards_for",
+0336:         "yellow_cards_against",
+0337:         "red_cards_for",
+0338:         "red_cards_against",
+0339:         "fouls_for",
+0340:         "fouls_against",
+0341:         "shots_for",
+0342:         "shots_against",
+0343:         "shots_on_target_for",
+
+0328: 
+0329: def compute_advanced_pre_features(team_adv_history, equipo, fecha_partido, side_suffix):
+0330:     fecha_partido = pd.to_datetime(fecha_partido)
+0331: 
+0332:     stat_cols = [
+0333:         "corners_for",
+0334:         "corners_against",
+0335:         "yellow_cards_for",
+0336:         "yellow_cards_against",
+0337:         "red_cards_for",
+0338:         "red_cards_against",
+0339:         "fouls_for",
+0340:         "fouls_against",
+0341:         "shots_for",
+0342:         "shots_against",
+0343:         "shots_on_target_for",
+0344:         "shots_on_target_against",
+
+0329: def compute_advanced_pre_features(team_adv_history, equipo, fecha_partido, side_suffix):
+0330:     fecha_partido = pd.to_datetime(fecha_partido)
+0331: 
+0332:     stat_cols = [
+0333:         "corners_for",
+0334:         "corners_against",
+0335:         "yellow_cards_for",
+0336:         "yellow_cards_against",
+0337:         "red_cards_for",
+0338:         "red_cards_against",
+0339:         "fouls_for",
+0340:         "fouls_against",
+0341:         "shots_for",
+0342:         "shots_against",
+0343:         "shots_on_target_for",
+0344:         "shots_on_target_against",
+0345:         "xg_for",
+
+0330:     fecha_partido = pd.to_datetime(fecha_partido)
+0331: 
+0332:     stat_cols = [
+0333:         "corners_for",
+0334:         "corners_against",
+0335:         "yellow_cards_for",
+0336:         "yellow_cards_against",
+0337:         "red_cards_for",
+0338:         "red_cards_against",
+0339:         "fouls_for",
+0340:         "fouls_against",
+0341:         "shots_for",
+0342:         "shots_against",
+0343:         "shots_on_target_for",
+0344:         "shots_on_target_against",
+0345:         "xg_for",
+0346:         "xg_against",
+
+0419: 
+0420:     row["fecha"] = fecha_partido
+0421:     row["equipo_local"] = equipo_local
+0422:     row["equipo_visitante"] = equipo_visitante
+0423: 
+0424:     # Targets desconocidos
+0425:     for c in [
+0426:         "goles_local", "goles_visitante", "resultado_1x2", "over_2_5", "btts",
+0427:         "corners_local", "corners_visitante", "total_corners",
+0428:         "yellow_cards_local", "yellow_cards_visitante", "total_yellow_cards",
+0429:         "red_cards_local", "red_cards_visitante", "total_red_cards",
+0430:         "fouls_local", "fouls_visitante", "total_fouls",
+0431:         "shots_local", "shots_visitante", "total_shots",
+0432:         "shots_on_target_local", "shots_on_target_visitante", "total_shots_on_target",
+0433:         "xg_local", "xg_visitante", "total_xg",
+0434:     ]:
+0435:         if c in row.index:
+
+0420:     row["fecha"] = fecha_partido
+0421:     row["equipo_local"] = equipo_local
+0422:     row["equipo_visitante"] = equipo_visitante
+0423: 
+0424:     # Targets desconocidos
+0425:     for c in [
+0426:         "goles_local", "goles_visitante", "resultado_1x2", "over_2_5", "btts",
+0427:         "corners_local", "corners_visitante", "total_corners",
+0428:         "yellow_cards_local", "yellow_cards_visitante", "total_yellow_cards",
+0429:         "red_cards_local", "red_cards_visitante", "total_red_cards",
+0430:         "fouls_local", "fouls_visitante", "total_fouls",
+0431:         "shots_local", "shots_visitante", "total_shots",
+0432:         "shots_on_target_local", "shots_on_target_visitante", "total_shots_on_target",
+0433:         "xg_local", "xg_visitante", "total_xg",
+0434:     ]:
+0435:         if c in row.index:
+0436:             row[c] = np.nan
+
+0421:     row["equipo_local"] = equipo_local
+0422:     row["equipo_visitante"] = equipo_visitante
+0423: 
+0424:     # Targets desconocidos
+0425:     for c in [
+0426:         "goles_local", "goles_visitante", "resultado_1x2", "over_2_5", "btts",
+0427:         "corners_local", "corners_visitante", "total_corners",
+0428:         "yellow_cards_local", "yellow_cards_visitante", "total_yellow_cards",
+0429:         "red_cards_local", "red_cards_visitante", "total_red_cards",
+0430:         "fouls_local", "fouls_visitante", "total_fouls",
+0431:         "shots_local", "shots_visitante", "total_shots",
+0432:         "shots_on_target_local", "shots_on_target_visitante", "total_shots_on_target",
+0433:         "xg_local", "xg_visitante", "total_xg",
+0434:     ]:
+0435:         if c in row.index:
+0436:             row[c] = np.nan
+0437: 
+
+0437: 
+0438:     row["torneo"] = torneo
+0439:     row["ciudad"] = ciudad
+0440:     row["pais_sede"] = pais_sede
+0441:     row["neutral"] = int(neutral)
+0442:     row["peso_competicion"] = assign_competition_weight(torneo, fase)
+0443: 
+0444:     if "source_id" in row.index:
+0445:         row["source_id"] = "manual_future_full_prediction"
+0446: 
+0447:     # Features base
+0448:     feats_l = compute_team_pre_features(team_history, equipo_local, fecha_partido, "L")
+0449:     feats_v = compute_team_pre_features(team_history, equipo_visitante, fecha_partido, "V")
+0450: 
+0451:     for k, v in feats_l.items():
+0452:         if k in row.index:
+0453:             row[k] = v
+
+0491: 
+0492:     return row
+0493: 
+0494: 
+0495: # ============================================================
+0496: # PREDICCIÓN CÓRNERS/TARJETAS
+0497: # ============================================================
+0498: 
+0499: def predict_pair_from_row(row, model_pack, lines):
+0500:     features = model_pack["features"]
+0501:     medians = model_pack["medians"]
+0502:     scaler = model_pack["scaler"]
+0503:     model_local = model_pack["model_local"]
+0504:     model_visitante = model_pack["model_visitante"]
+0505:     max_side_lambda = model_pack.get("max_side_lambda", 20.0)
+0506: 
+0507:     x_dict = {}
+
+0514: 
+0515:     X = pd.DataFrame([x_dict])
+0516:     X = X.replace([np.inf, -np.inf], np.nan)
+0517:     X = X.fillna(medians)
+0518:     X = X.fillna(0.0)
+0519: 
+0520:     Xs = scaler.transform(X)
+0521: 
+0522:     lambda_local = float(np.clip(model_local.predict(Xs)[0], 0.01, max_side_lambda))
+0523:     lambda_visitante = float(np.clip(model_visitante.predict(Xs)[0], 0.01, max_side_lambda))
+0524:     lambda_total = lambda_local + lambda_visitante
+0525: 
+0526:     markets = market_probs(lambda_total, lines)
+0527: 
+0528:     return {
+0529:         "lambda_local": lambda_local,
+0530:         "lambda_visitante": lambda_visitante,
+
+0515:     X = pd.DataFrame([x_dict])
+0516:     X = X.replace([np.inf, -np.inf], np.nan)
+0517:     X = X.fillna(medians)
+0518:     X = X.fillna(0.0)
+0519: 
+0520:     Xs = scaler.transform(X)
+0521: 
+0522:     lambda_local = float(np.clip(model_local.predict(Xs)[0], 0.01, max_side_lambda))
+0523:     lambda_visitante = float(np.clip(model_visitante.predict(Xs)[0], 0.01, max_side_lambda))
+0524:     lambda_total = lambda_local + lambda_visitante
+0525: 
+0526:     markets = market_probs(lambda_total, lines)
+0527: 
+0528:     return {
+0529:         "lambda_local": lambda_local,
+0530:         "lambda_visitante": lambda_visitante,
+0531:         "lambda_total": lambda_total,
+
+0535: 
+0536: # ============================================================
+0537: # REPORTE
+0538: # ============================================================
+0539: 
+0540: def imprimir_reporte_completo(result):
+0541:     partido = result["partido"]
+0542:     goles = result["goles"]
+0543:     corners = result["corners"]
+0544:     cards = result["yellow_cards"]
+0545: 
+0546:     probs = goles["probabilidades"]
+0547: 
+0548:     print("=" * 90)
+0549:     print("PREDICCIÓN COMPLETA — GOLES + CÓRNERS + TARJETAS")
+0550:     print("=" * 90)
+0551: 
+
+0536: # ============================================================
+0537: # REPORTE
+0538: # ============================================================
+0539: 
+0540: def imprimir_reporte_completo(result):
+0541:     partido = result["partido"]
+0542:     goles = result["goles"]
+0543:     corners = result["corners"]
+0544:     cards = result["yellow_cards"]
+0545: 
+0546:     probs = goles["probabilidades"]
+0547: 
+0548:     print("=" * 90)
+0549:     print("PREDICCIÓN COMPLETA — GOLES + CÓRNERS + TARJETAS")
+0550:     print("=" * 90)
+0551: 
+0552:     print(f"{partido['equipo_local']} vs {partido['equipo_visitante']}")
+
+0587: 
+0588:     print("\nTop marcadores:")
+0589:     for item in goles["top_marcadores"][:10]:
+0590:         print(f"  {item['score']}: {100 * item['prob']:.2f}%")
+0591: 
+0592:     print("\n" + "-" * 90)
+0593:     print("CÓRNERS — MODELO EXPERIMENTAL ESTABLE")
+0594:     print("-" * 90)
+0595:     print(f"Córners esperados {partido['equipo_local']}: {corners['lambda_local']:.3f}")
+0596:     print(f"Córners esperados {partido['equipo_visitante']}: {corners['lambda_visitante']:.3f}")
+0597:     print(f"Total córners esperado: {corners['lambda_total']:.3f}")
+0598: 
+0599:     print("\nMercados córners:")
+0600:     for line in [7.5, 8.5, 9.5, 10.5, 11.5]:
+0601:         key = str(line).replace(".", "_")
+0602:         print(f"  Over {line}: {100 * corners['markets'][f'over_{key}']:.2f}% | Under {line}: {100 * corners['markets'][f'under_{key}']:.2f}%")
+0603: 
+
+0588:     print("\nTop marcadores:")
+0589:     for item in goles["top_marcadores"][:10]:
+0590:         print(f"  {item['score']}: {100 * item['prob']:.2f}%")
+0591: 
+0592:     print("\n" + "-" * 90)
+0593:     print("CÓRNERS — MODELO EXPERIMENTAL ESTABLE")
+0594:     print("-" * 90)
+0595:     print(f"Córners esperados {partido['equipo_local']}: {corners['lambda_local']:.3f}")
+0596:     print(f"Córners esperados {partido['equipo_visitante']}: {corners['lambda_visitante']:.3f}")
+0597:     print(f"Total córners esperado: {corners['lambda_total']:.3f}")
+0598: 
+0599:     print("\nMercados córners:")
+0600:     for line in [7.5, 8.5, 9.5, 10.5, 11.5]:
+0601:         key = str(line).replace(".", "_")
+0602:         print(f"  Over {line}: {100 * corners['markets'][f'over_{key}']:.2f}% | Under {line}: {100 * corners['markets'][f'under_{key}']:.2f}%")
+0603: 
+0604:     print("\n" + "-" * 90)
+
+0589:     for item in goles["top_marcadores"][:10]:
+0590:         print(f"  {item['score']}: {100 * item['prob']:.2f}%")
+0591: 
+0592:     print("\n" + "-" * 90)
+0593:     print("CÓRNERS — MODELO EXPERIMENTAL ESTABLE")
+0594:     print("-" * 90)
+0595:     print(f"Córners esperados {partido['equipo_local']}: {corners['lambda_local']:.3f}")
+0596:     print(f"Córners esperados {partido['equipo_visitante']}: {corners['lambda_visitante']:.3f}")
+0597:     print(f"Total córners esperado: {corners['lambda_total']:.3f}")
+0598: 
+0599:     print("\nMercados córners:")
+0600:     for line in [7.5, 8.5, 9.5, 10.5, 11.5]:
+0601:         key = str(line).replace(".", "_")
+0602:         print(f"  Over {line}: {100 * corners['markets'][f'over_{key}']:.2f}% | Under {line}: {100 * corners['markets'][f'under_{key}']:.2f}%")
+0603: 
+0604:     print("\n" + "-" * 90)
+0605:     print("TARJETAS AMARILLAS — MODELO EXPERIMENTAL ESTABLE")
+
+0594:     print("-" * 90)
+0595:     print(f"Córners esperados {partido['equipo_local']}: {corners['lambda_local']:.3f}")
+0596:     print(f"Córners esperados {partido['equipo_visitante']}: {corners['lambda_visitante']:.3f}")
+0597:     print(f"Total córners esperado: {corners['lambda_total']:.3f}")
+0598: 
+0599:     print("\nMercados córners:")
+0600:     for line in [7.5, 8.5, 9.5, 10.5, 11.5]:
+0601:         key = str(line).replace(".", "_")
+0602:         print(f"  Over {line}: {100 * corners['markets'][f'over_{key}']:.2f}% | Under {line}: {100 * corners['markets'][f'under_{key}']:.2f}%")
+0603: 
+0604:     print("\n" + "-" * 90)
+0605:     print("TARJETAS AMARILLAS — MODELO EXPERIMENTAL ESTABLE")
+0606:     print("-" * 90)
+0607:     print(f"Tarjetas esperadas {partido['equipo_local']}: {cards['lambda_local']:.3f}")
+0608:     print(f"Tarjetas esperadas {partido['equipo_visitante']}: {cards['lambda_visitante']:.3f}")
+0609:     print(f"Total tarjetas esperado: {cards['lambda_total']:.3f}")
+0610: 
+
+0599:     print("\nMercados córners:")
+0600:     for line in [7.5, 8.5, 9.5, 10.5, 11.5]:
+0601:         key = str(line).replace(".", "_")
+0602:         print(f"  Over {line}: {100 * corners['markets'][f'over_{key}']:.2f}% | Under {line}: {100 * corners['markets'][f'under_{key}']:.2f}%")
+0603: 
+0604:     print("\n" + "-" * 90)
+0605:     print("TARJETAS AMARILLAS — MODELO EXPERIMENTAL ESTABLE")
+0606:     print("-" * 90)
+0607:     print(f"Tarjetas esperadas {partido['equipo_local']}: {cards['lambda_local']:.3f}")
+0608:     print(f"Tarjetas esperadas {partido['equipo_visitante']}: {cards['lambda_visitante']:.3f}")
+0609:     print(f"Total tarjetas esperado: {cards['lambda_total']:.3f}")
+0610: 
+0611:     print("\nMercados tarjetas:")
+0612:     for line in [2.5, 3.5, 4.5, 5.5, 6.5]:
+0613:         key = str(line).replace(".", "_")
+0614:         print(f"  Over {line}: {100 * cards['markets'][f'over_{key}']:.2f}% | Under {line}: {100 * cards['markets'][f'under_{key}']:.2f}%")
+0615: 
+
+0600:     for line in [7.5, 8.5, 9.5, 10.5, 11.5]:
+0601:         key = str(line).replace(".", "_")
+0602:         print(f"  Over {line}: {100 * corners['markets'][f'over_{key}']:.2f}% | Under {line}: {100 * corners['markets'][f'under_{key}']:.2f}%")
+0603: 
+0604:     print("\n" + "-" * 90)
+0605:     print("TARJETAS AMARILLAS — MODELO EXPERIMENTAL ESTABLE")
+0606:     print("-" * 90)
+0607:     print(f"Tarjetas esperadas {partido['equipo_local']}: {cards['lambda_local']:.3f}")
+0608:     print(f"Tarjetas esperadas {partido['equipo_visitante']}: {cards['lambda_visitante']:.3f}")
+0609:     print(f"Total tarjetas esperado: {cards['lambda_total']:.3f}")
+0610: 
+0611:     print("\nMercados tarjetas:")
+0612:     for line in [2.5, 3.5, 4.5, 5.5, 6.5]:
+0613:         key = str(line).replace(".", "_")
+0614:         print(f"  Over {line}: {100 * cards['markets'][f'over_{key}']:.2f}% | Under {line}: {100 * cards['markets'][f'under_{key}']:.2f}%")
+0615: 
+0616:     print("\n" + "-" * 90)
+
+0601:         key = str(line).replace(".", "_")
+0602:         print(f"  Over {line}: {100 * corners['markets'][f'over_{key}']:.2f}% | Under {line}: {100 * corners['markets'][f'under_{key}']:.2f}%")
+0603: 
+0604:     print("\n" + "-" * 90)
+0605:     print("TARJETAS AMARILLAS — MODELO EXPERIMENTAL ESTABLE")
+0606:     print("-" * 90)
+0607:     print(f"Tarjetas esperadas {partido['equipo_local']}: {cards['lambda_local']:.3f}")
+0608:     print(f"Tarjetas esperadas {partido['equipo_visitante']}: {cards['lambda_visitante']:.3f}")
+0609:     print(f"Total tarjetas esperado: {cards['lambda_total']:.3f}")
+0610: 
+0611:     print("\nMercados tarjetas:")
+0612:     for line in [2.5, 3.5, 4.5, 5.5, 6.5]:
+0613:         key = str(line).replace(".", "_")
+0614:         print(f"  Over {line}: {100 * cards['markets'][f'over_{key}']:.2f}% | Under {line}: {100 * cards['markets'][f'under_{key}']:.2f}%")
+0615: 
+0616:     print("\n" + "-" * 90)
+0617:     print("NOTA")
+
+0606:     print("-" * 90)
+0607:     print(f"Tarjetas esperadas {partido['equipo_local']}: {cards['lambda_local']:.3f}")
+0608:     print(f"Tarjetas esperadas {partido['equipo_visitante']}: {cards['lambda_visitante']:.3f}")
+0609:     print(f"Total tarjetas esperado: {cards['lambda_total']:.3f}")
+0610: 
+0611:     print("\nMercados tarjetas:")
+0612:     for line in [2.5, 3.5, 4.5, 5.5, 6.5]:
+0613:         key = str(line).replace(".", "_")
+0614:         print(f"  Over {line}: {100 * cards['markets'][f'over_{key}']:.2f}% | Under {line}: {100 * cards['markets'][f'under_{key}']:.2f}%")
+0615: 
+0616:     print("\n" + "-" * 90)
+0617:     print("NOTA")
+0618:     print("-" * 90)
+0619:     print("El modelo de goles está entrenado con todo el histórico disponible.")
+0620:     print("Los modelos de córners y tarjetas son experimentales porque usan 290 partidos con StatsBomb Open Data.")
+0621: 
+0622: 
+
+0615: 
+0616:     print("\n" + "-" * 90)
+0617:     print("NOTA")
+0618:     print("-" * 90)
+0619:     print("El modelo de goles está entrenado con todo el histórico disponible.")
+0620:     print("Los modelos de córners y tarjetas son experimentales porque usan 290 partidos con StatsBomb Open Data.")
+0621: 
+0622: 
+0623: def append_prediction_summary(result, project_root=DEFAULT_PROJECT_ROOT):
+0624:     project_root = Path(project_root)
+0625:     out_path = project_root / "data/predictions/manual_full_match_predictions.csv"
+0626:     out_path.parent.mkdir(parents=True, exist_ok=True)
+0627: 
+0628:     partido = result["partido"]
+0629:     goles = result["goles"]
+0630:     corners = result["corners"]
+0631:     cards = result["yellow_cards"]
+
+0617:     print("NOTA")
+0618:     print("-" * 90)
+0619:     print("El modelo de goles está entrenado con todo el histórico disponible.")
+0620:     print("Los modelos de córners y tarjetas son experimentales porque usan 290 partidos con StatsBomb Open Data.")
+0621: 
+0622: 
+0623: def append_prediction_summary(result, project_root=DEFAULT_PROJECT_ROOT):
+0624:     project_root = Path(project_root)
+0625:     out_path = project_root / "data/predictions/manual_full_match_predictions.csv"
+0626:     out_path.parent.mkdir(parents=True, exist_ok=True)
+0627: 
+0628:     partido = result["partido"]
+0629:     goles = result["goles"]
+0630:     corners = result["corners"]
+0631:     cards = result["yellow_cards"]
+0632:     probs = goles["probabilidades"]
+0633: 
+
+0622: 
+0623: def append_prediction_summary(result, project_root=DEFAULT_PROJECT_ROOT):
+0624:     project_root = Path(project_root)
+0625:     out_path = project_root / "data/predictions/manual_full_match_predictions.csv"
+0626:     out_path.parent.mkdir(parents=True, exist_ok=True)
+0627: 
+0628:     partido = result["partido"]
+0629:     goles = result["goles"]
+0630:     corners = result["corners"]
+0631:     cards = result["yellow_cards"]
+0632:     probs = goles["probabilidades"]
+0633: 
+0634:     row = {
+0635:         "created_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+0636:         "fecha": partido["fecha"],
+0637:         "equipo_local": partido["equipo_local"],
+0638:         "equipo_visitante": partido["equipo_visitante"],
+
+0623: def append_prediction_summary(result, project_root=DEFAULT_PROJECT_ROOT):
+0624:     project_root = Path(project_root)
+0625:     out_path = project_root / "data/predictions/manual_full_match_predictions.csv"
+0626:     out_path.parent.mkdir(parents=True, exist_ok=True)
+0627: 
+0628:     partido = result["partido"]
+0629:     goles = result["goles"]
+0630:     corners = result["corners"]
+0631:     cards = result["yellow_cards"]
+0632:     probs = goles["probabilidades"]
+0633: 
+0634:     row = {
+0635:         "created_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+0636:         "fecha": partido["fecha"],
+0637:         "equipo_local": partido["equipo_local"],
+0638:         "equipo_visitante": partido["equipo_visitante"],
+0639:         "torneo": partido["torneo"],
+
+0650:         "prob_empate": probs["prob_empate"],
+0651:         "prob_visitante": probs["prob_visitante"],
+0652:         "over_2_5_goals": probs["over_2_5"],
+0653:         "under_2_5_goals": probs["under_2_5"],
+0654:         "btts_si": probs["btts_si"],
+0655:         "btts_no": probs["btts_no"],
+0656:         "marcador_mas_probable": probs["marcador_mas_probable"],
+0657: 
+0658:         "lambda_corners_local": corners["lambda_local"],
+0659:         "lambda_corners_visitante": corners["lambda_visitante"],
+0660:         "lambda_corners_total": corners["lambda_total"],
+0661: 
+0662:         "lambda_yellow_cards_local": cards["lambda_local"],
+0663:         "lambda_yellow_cards_visitante": cards["lambda_visitante"],
+0664:         "lambda_yellow_cards_total": cards["lambda_total"],
+0665:     }
+0666: 
+
+0651:         "prob_visitante": probs["prob_visitante"],
+0652:         "over_2_5_goals": probs["over_2_5"],
+0653:         "under_2_5_goals": probs["under_2_5"],
+0654:         "btts_si": probs["btts_si"],
+0655:         "btts_no": probs["btts_no"],
+0656:         "marcador_mas_probable": probs["marcador_mas_probable"],
+0657: 
+0658:         "lambda_corners_local": corners["lambda_local"],
+0659:         "lambda_corners_visitante": corners["lambda_visitante"],
+0660:         "lambda_corners_total": corners["lambda_total"],
+0661: 
+0662:         "lambda_yellow_cards_local": cards["lambda_local"],
+0663:         "lambda_yellow_cards_visitante": cards["lambda_visitante"],
+0664:         "lambda_yellow_cards_total": cards["lambda_total"],
+0665:     }
+0666: 
+0667:     for line in [7.5, 8.5, 9.5, 10.5, 11.5]:
+
+0652:         "over_2_5_goals": probs["over_2_5"],
+0653:         "under_2_5_goals": probs["under_2_5"],
+0654:         "btts_si": probs["btts_si"],
+0655:         "btts_no": probs["btts_no"],
+0656:         "marcador_mas_probable": probs["marcador_mas_probable"],
+0657: 
+0658:         "lambda_corners_local": corners["lambda_local"],
+0659:         "lambda_corners_visitante": corners["lambda_visitante"],
+0660:         "lambda_corners_total": corners["lambda_total"],
+0661: 
+0662:         "lambda_yellow_cards_local": cards["lambda_local"],
+0663:         "lambda_yellow_cards_visitante": cards["lambda_visitante"],
+0664:         "lambda_yellow_cards_total": cards["lambda_total"],
+0665:     }
+0666: 
+0667:     for line in [7.5, 8.5, 9.5, 10.5, 11.5]:
+0668:         key = str(line).replace(".", "_")
+
+0654:         "btts_si": probs["btts_si"],
+0655:         "btts_no": probs["btts_no"],
+0656:         "marcador_mas_probable": probs["marcador_mas_probable"],
+0657: 
+0658:         "lambda_corners_local": corners["lambda_local"],
+0659:         "lambda_corners_visitante": corners["lambda_visitante"],
+0660:         "lambda_corners_total": corners["lambda_total"],
+0661: 
+0662:         "lambda_yellow_cards_local": cards["lambda_local"],
+0663:         "lambda_yellow_cards_visitante": cards["lambda_visitante"],
+0664:         "lambda_yellow_cards_total": cards["lambda_total"],
+0665:     }
+0666: 
+0667:     for line in [7.5, 8.5, 9.5, 10.5, 11.5]:
+0668:         key = str(line).replace(".", "_")
+0669:         row[f"over_corners_{key}"] = corners["markets"][f"over_{key}"]
+0670:         row[f"under_corners_{key}"] = corners["markets"][f"under_{key}"]
+
+0655:         "btts_no": probs["btts_no"],
+0656:         "marcador_mas_probable": probs["marcador_mas_probable"],
+0657: 
+0658:         "lambda_corners_local": corners["lambda_local"],
+0659:         "lambda_corners_visitante": corners["lambda_visitante"],
+0660:         "lambda_corners_total": corners["lambda_total"],
+0661: 
+0662:         "lambda_yellow_cards_local": cards["lambda_local"],
+0663:         "lambda_yellow_cards_visitante": cards["lambda_visitante"],
+0664:         "lambda_yellow_cards_total": cards["lambda_total"],
+0665:     }
+0666: 
+0667:     for line in [7.5, 8.5, 9.5, 10.5, 11.5]:
+0668:         key = str(line).replace(".", "_")
+0669:         row[f"over_corners_{key}"] = corners["markets"][f"over_{key}"]
+0670:         row[f"under_corners_{key}"] = corners["markets"][f"under_{key}"]
+0671: 
+
+0656:         "marcador_mas_probable": probs["marcador_mas_probable"],
+0657: 
+0658:         "lambda_corners_local": corners["lambda_local"],
+0659:         "lambda_corners_visitante": corners["lambda_visitante"],
+0660:         "lambda_corners_total": corners["lambda_total"],
+0661: 
+0662:         "lambda_yellow_cards_local": cards["lambda_local"],
+0663:         "lambda_yellow_cards_visitante": cards["lambda_visitante"],
+0664:         "lambda_yellow_cards_total": cards["lambda_total"],
+0665:     }
+0666: 
+0667:     for line in [7.5, 8.5, 9.5, 10.5, 11.5]:
+0668:         key = str(line).replace(".", "_")
+0669:         row[f"over_corners_{key}"] = corners["markets"][f"over_{key}"]
+0670:         row[f"under_corners_{key}"] = corners["markets"][f"under_{key}"]
+0671: 
+0672:     for line in [2.5, 3.5, 4.5, 5.5, 6.5]:
+
+0661: 
+0662:         "lambda_yellow_cards_local": cards["lambda_local"],
+0663:         "lambda_yellow_cards_visitante": cards["lambda_visitante"],
+0664:         "lambda_yellow_cards_total": cards["lambda_total"],
+0665:     }
+0666: 
+0667:     for line in [7.5, 8.5, 9.5, 10.5, 11.5]:
+0668:         key = str(line).replace(".", "_")
+0669:         row[f"over_corners_{key}"] = corners["markets"][f"over_{key}"]
+0670:         row[f"under_corners_{key}"] = corners["markets"][f"under_{key}"]
+0671: 
+0672:     for line in [2.5, 3.5, 4.5, 5.5, 6.5]:
+0673:         key = str(line).replace(".", "_")
+0674:         row[f"over_cards_{key}"] = cards["markets"][f"over_{key}"]
+0675:         row[f"under_cards_{key}"] = cards["markets"][f"under_{key}"]
+0676: 
+0677:     df_new = pd.DataFrame([row])
+
+0662:         "lambda_yellow_cards_local": cards["lambda_local"],
+0663:         "lambda_yellow_cards_visitante": cards["lambda_visitante"],
+0664:         "lambda_yellow_cards_total": cards["lambda_total"],
+0665:     }
+0666: 
+0667:     for line in [7.5, 8.5, 9.5, 10.5, 11.5]:
+0668:         key = str(line).replace(".", "_")
+0669:         row[f"over_corners_{key}"] = corners["markets"][f"over_{key}"]
+0670:         row[f"under_corners_{key}"] = corners["markets"][f"under_{key}"]
+0671: 
+0672:     for line in [2.5, 3.5, 4.5, 5.5, 6.5]:
+0673:         key = str(line).replace(".", "_")
+0674:         row[f"over_cards_{key}"] = cards["markets"][f"over_{key}"]
+0675:         row[f"under_cards_{key}"] = cards["markets"][f"under_{key}"]
+0676: 
+0677:     df_new = pd.DataFrame([row])
+0678: 
+
+0666: 
+0667:     for line in [7.5, 8.5, 9.5, 10.5, 11.5]:
+0668:         key = str(line).replace(".", "_")
+0669:         row[f"over_corners_{key}"] = corners["markets"][f"over_{key}"]
+0670:         row[f"under_corners_{key}"] = corners["markets"][f"under_{key}"]
+0671: 
+0672:     for line in [2.5, 3.5, 4.5, 5.5, 6.5]:
+0673:         key = str(line).replace(".", "_")
+0674:         row[f"over_cards_{key}"] = cards["markets"][f"over_{key}"]
+0675:         row[f"under_cards_{key}"] = cards["markets"][f"under_{key}"]
+0676: 
+0677:     df_new = pd.DataFrame([row])
+0678: 
+0679:     if out_path.exists():
+0680:         df_old = pd.read_csv(out_path)
+0681:         df_out = pd.concat([df_old, df_new], ignore_index=True)
+0682:     else:
+
+0667:     for line in [7.5, 8.5, 9.5, 10.5, 11.5]:
+0668:         key = str(line).replace(".", "_")
+0669:         row[f"over_corners_{key}"] = corners["markets"][f"over_{key}"]
+0670:         row[f"under_corners_{key}"] = corners["markets"][f"under_{key}"]
+0671: 
+0672:     for line in [2.5, 3.5, 4.5, 5.5, 6.5]:
+0673:         key = str(line).replace(".", "_")
+0674:         row[f"over_cards_{key}"] = cards["markets"][f"over_{key}"]
+0675:         row[f"under_cards_{key}"] = cards["markets"][f"under_{key}"]
+0676: 
+0677:     df_new = pd.DataFrame([row])
+0678: 
+0679:     if out_path.exists():
+0680:         df_old = pd.read_csv(out_path)
+0681:         df_out = pd.concat([df_old, df_new], ignore_index=True)
+0682:     else:
+0683:         df_out = df_new
+
+0717:         torneo=torneo,
+0718:         fase=fase,
+0719:         ciudad=ciudad,
+0720:         estadio=estadio,
+0721:         pais_sede=pais_sede,
+0722:         neutral=neutral,
+0723:     )
+0724: 
+0725:     goles = predict_from_feature_row(row, goal_bundle)
+0726: 
+0727:     corners = predict_pair_from_row(
+0728:         row=row,
+0729:         model_pack=cc_bundle["corners"],
+0730:         lines=cc_bundle["corners_lines"]
+0731:     )
+0732: 
+0733:     yellow_cards = predict_pair_from_row(
+
+0719:         ciudad=ciudad,
+0720:         estadio=estadio,
+0721:         pais_sede=pais_sede,
+0722:         neutral=neutral,
+0723:     )
+0724: 
+0725:     goles = predict_from_feature_row(row, goal_bundle)
+0726: 
+0727:     corners = predict_pair_from_row(
+0728:         row=row,
+0729:         model_pack=cc_bundle["corners"],
+0730:         lines=cc_bundle["corners_lines"]
+0731:     )
+0732: 
+0733:     yellow_cards = predict_pair_from_row(
+0734:         row=row,
+0735:         model_pack=cc_bundle["yellow_cards"],
+
+0721:         pais_sede=pais_sede,
+0722:         neutral=neutral,
+0723:     )
+0724: 
+0725:     goles = predict_from_feature_row(row, goal_bundle)
+0726: 
+0727:     corners = predict_pair_from_row(
+0728:         row=row,
+0729:         model_pack=cc_bundle["corners"],
+0730:         lines=cc_bundle["corners_lines"]
+0731:     )
+0732: 
+0733:     yellow_cards = predict_pair_from_row(
+0734:         row=row,
+0735:         model_pack=cc_bundle["yellow_cards"],
+0736:         lines=cc_bundle["cards_lines"]
+0737:     )
+
+0722:         neutral=neutral,
+0723:     )
+0724: 
+0725:     goles = predict_from_feature_row(row, goal_bundle)
+0726: 
+0727:     corners = predict_pair_from_row(
+0728:         row=row,
+0729:         model_pack=cc_bundle["corners"],
+0730:         lines=cc_bundle["corners_lines"]
+0731:     )
+0732: 
+0733:     yellow_cards = predict_pair_from_row(
+0734:         row=row,
+0735:         model_pack=cc_bundle["yellow_cards"],
+0736:         lines=cc_bundle["cards_lines"]
+0737:     )
+0738: 
+
+0725:     goles = predict_from_feature_row(row, goal_bundle)
+0726: 
+0727:     corners = predict_pair_from_row(
+0728:         row=row,
+0729:         model_pack=cc_bundle["corners"],
+0730:         lines=cc_bundle["corners_lines"]
+0731:     )
+0732: 
+0733:     yellow_cards = predict_pair_from_row(
+0734:         row=row,
+0735:         model_pack=cc_bundle["yellow_cards"],
+0736:         lines=cc_bundle["cards_lines"]
+0737:     )
+0738: 
+0739:     result = {
+0740:         "partido": {
+0741:             "equipo_local": equipo_local,
+
+0727:     corners = predict_pair_from_row(
+0728:         row=row,
+0729:         model_pack=cc_bundle["corners"],
+0730:         lines=cc_bundle["corners_lines"]
+0731:     )
+0732: 
+0733:     yellow_cards = predict_pair_from_row(
+0734:         row=row,
+0735:         model_pack=cc_bundle["yellow_cards"],
+0736:         lines=cc_bundle["cards_lines"]
+0737:     )
+0738: 
+0739:     result = {
+0740:         "partido": {
+0741:             "equipo_local": equipo_local,
+0742:             "equipo_visitante": equipo_visitante,
+0743:             "fecha": str(pd.to_datetime(fecha_partido).date()),
+
+0728:         row=row,
+0729:         model_pack=cc_bundle["corners"],
+0730:         lines=cc_bundle["corners_lines"]
+0731:     )
+0732: 
+0733:     yellow_cards = predict_pair_from_row(
+0734:         row=row,
+0735:         model_pack=cc_bundle["yellow_cards"],
+0736:         lines=cc_bundle["cards_lines"]
+0737:     )
+0738: 
+0739:     result = {
+0740:         "partido": {
+0741:             "equipo_local": equipo_local,
+0742:             "equipo_visitante": equipo_visitante,
+0743:             "fecha": str(pd.to_datetime(fecha_partido).date()),
+0744:             "torneo": torneo,
+
+0745:             "fase": fase,
+0746:             "ciudad": ciudad,
+0747:             "estadio": estadio,
+0748:             "pais_sede": pais_sede,
+0749:             "neutral": int(neutral),
+0750:         },
+0751:         "features_row": row,
+0752:         "goles": goles,
+0753:         "corners": corners,
+0754:         "yellow_cards": yellow_cards,
+0755:     }
+0756: 
+0757:     if verbose:
+0758:         imprimir_reporte_completo(result)
+0759: 
+0760:     if save:
+0761:         out_path = append_prediction_summary(result, project_root=project_root)
+
+0746:             "ciudad": ciudad,
+0747:             "estadio": estadio,
+0748:             "pais_sede": pais_sede,
+0749:             "neutral": int(neutral),
+0750:         },
+0751:         "features_row": row,
+0752:         "goles": goles,
+0753:         "corners": corners,
+0754:         "yellow_cards": yellow_cards,
+0755:     }
+0756: 
+0757:     if verbose:
+0758:         imprimir_reporte_completo(result)
+0759: 
+0760:     if save:
+0761:         out_path = append_prediction_summary(result, project_root=project_root)
+0762:         if verbose:
+
+0753:         "corners": corners,
+0754:         "yellow_cards": yellow_cards,
+0755:     }
+0756: 
+0757:     if verbose:
+0758:         imprimir_reporte_completo(result)
+0759: 
+0760:     if save:
+0761:         out_path = append_prediction_summary(result, project_root=project_root)
+0762:         if verbose:
+0763:             print(f"\nPredicción guardada en: {out_path}")
+0764: 
+0765:     return result

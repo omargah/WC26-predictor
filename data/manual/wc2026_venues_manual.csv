@@ -1,0 +1,12 @@
+venue_id,city,country,host_country,altitude_m,latitude,longitude,notes
+MEX_MEXICO_CITY,Mexico City,Mexico,Mexico,2240,19.4326,-99.1332,Altitud relevante. Revisar estadio y fixture oficial.
+MEX_GUADALAJARA,Guadalajara,Mexico,Mexico,1566,20.6597,-103.3496,Altitud moderada. Revisar estadio y fixture oficial.
+MEX_MONTERREY,Monterrey,Mexico,Mexico,540,25.6866,-100.3161,Altitud menor que CDMX/Guadalajara.
+USA_LOS_ANGELES,Los Angeles,United States,United States,71,34.0522,-118.2437,Sede de baja altitud.
+USA_SEATTLE,Seattle,United States,United States,52,47.6062,-122.3321,Sede de baja altitud.
+USA_DALLAS,Dallas,United States,United States,131,32.7767,-96.797,Sede de baja altitud.
+USA_HOUSTON,Houston,United States,United States,24,29.7604,-95.3698,Sede de baja altitud.
+USA_ATLANTA,Atlanta,United States,United States,320,33.749,-84.388,Sede de baja/moderada altitud.
+USA_MIAMI,Miami,United States,United States,2,25.7617,-80.1918,Humedad puede ser relevante si se incorpora clima.
+CAN_TORONTO,Toronto,Canada,Canada,76,43.6532,-79.3832,Sede de baja altitud.
+CAN_VANCOUVER,Vancouver,Canada,Canada,2,49.2827,-123.1207,Sede de baja altitud.

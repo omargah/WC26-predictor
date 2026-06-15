@@ -1,0 +1,2 @@
+n_train_test_matches,test_date_min,test_date_max,mae_goles_local,mae_goles_visitante,mae_goles_total,accuracy_1x2,log_loss_1x2,brier_multiclass_1x2
+3165,2023-07-09,2026-06-14,1.0327151115174018,0.8592548031695458,1.4083101771127433,0.6015797788309637,0.8696462816986988,0.5113914706067886

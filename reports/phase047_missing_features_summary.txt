@@ -1,0 +1,5 @@
+DIAGNÓSTICO FEATURES JOBLIB CÓRNERS/TARJETAS
+======================================================================
+Features esperadas: 183
+Faltantes en modeling_dataset.parquet: 71
+Existe advanced: False

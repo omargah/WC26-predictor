@@ -1,0 +1,5 @@
+case_id,partido,marcador_real,old_goles,new_goles,old_corners_total,new_corners_total,delta_corners_total,old_cards_total,new_cards_total,delta_cards_total,cambio_grande,flags
+MEX_RSA_2026_GROUP_FULL,Mexico vs South Africa,2-0,2.355-0.442,2.456-0.483,8.714,8.714,0.000,2.997,2.997,0.000,False,
+CZE_KOR_2026_GROUP_FULL,Czechia vs South Korea,1-2,0.733-1.653,0.762-1.717,8.864,8.864,0.000,3.391,3.391,0.000,False,
+CAN_BIH_2026_GROUP_GOALS,Canada vs Bosnia and Herzegovina,1-1,2.248-0.504,2.393-0.510,NA,NA,NA,NA,NA,NA,False,
+USA_PAR_2026_GROUP_FULL,United States vs Paraguay,4-1,1.513-0.983,1.408-1.062,6.686,6.686,0.000,3.840,3.840,0.000,False,

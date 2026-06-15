@@ -1,0 +1,6 @@
+simulation,team,group,group_position,group_points,group_gf,group_ga,group_gd,qualified_group,champion,runner_up_tournament,third_place_tournament,max_stage,eliminated_round,is_champion,is_runner_up,path_string
+1,Mexico,A,2,6,8,2,6,True,Argentina,Iran,Germany,Round of 16,Round of 16,False,False,Round of 32: Bosnia and Herzegovina → Round of 16: Brazil
+2,Mexico,A,1,7,3,0,3,True,Iran,Belgium,Morocco,Round of 16,Round of 16,False,False,Round of 32: Ivory Coast → Round of 16: Uzbekistan
+3,Mexico,A,1,6,5,3,2,True,England,South Korea,Ecuador,Round of 32,Round of 32,False,False,Round of 32: Sweden
+4,Mexico,A,1,7,5,0,5,True,Spain,Argentina,Mexico,Semifinal,Semifinal,False,False,Round of 32: France → Round of 16: England → Quarterfinal: Japan → Semifinal: Argentina
+5,Mexico,A,3,6,4,3,1,True,Germany,Ivory Coast,Spain,Round of 32,Round of 32,False,False,Round of 32: Ivory Coast

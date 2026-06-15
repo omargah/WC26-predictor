@@ -1,0 +1,5 @@
+case_id,partido,primer_colab,modelo_actualizado,marcador_real,old_hit_1x2,new_hit_1x2,old_top_score_hit,new_top_score_hit,cambio_grande,flags
+MEX_RSA_2026_GROUP_FULL,Mexico vs South Africa,"λ=(2.355, 0.442); 1X2=(80.85%, 13.35%, 5.79%); score=2-0","λ=(2.456, 0.483); 1X2=(81.32%, 12.75%, 5.92%); score=2-0",Mexico 2-0 South Africa,True,True,True,True,False,
+CZE_KOR_2026_GROUP_FULL,Czechia vs South Korea,"λ=(0.733, 1.653); 1X2=(17.19%, 22.54%, 60.28%); score=0-1","λ=(0.762, 1.717); 1X2=(17.12%, 21.86%, 61.02%); score=0-1",Czechia 1-2 South Korea,True,True,False,False,False,
+CAN_BIH_2026_GROUP_GOALS,Canada vs Bosnia and Herzegovina,"λ=(2.248, 0.504); 1X2=(77.82%, 14.85%, 7.33%); score=2-0","λ=(2.393, 0.510); 1X2=(79.87%, 13.51%, 6.62%); score=2-0",Canada 1-1 Bosnia and Herzegovina,False,False,False,False,False,
+USA_PAR_2026_GROUP_FULL,United States vs Paraguay,"λ=(1.513, 0.983); 1X2=(50.46%, 24.04%, 25.50%); score=1-0","λ=(1.408, 1.062); 1X2=(45.83%, 24.80%, 29.37%); score=1-0",United States 4-1 Paraguay,True,True,False,False,False,

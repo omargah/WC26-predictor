@@ -1,0 +1,5 @@
+case_id,home_team,away_team,available,source,reason,feature_search_mode,feature_was_reversed,features_count,corners_home,corners_away,corners_total,cards_home,cards_away,cards_total
+MEX_RSA_2026_GROUP_FULL,Mexico,South Africa,True,legacy_joblib_real,,basic_direct_same_date,False,183,4.584243931306886,3.442261151884267,8.026505083191154,1.5045888011305164,1.7715572813150207,3.2761460824455373
+CZE_KOR_2026_GROUP_FULL,Czechia,South Korea,True,legacy_joblib_real,,basic_reverse_same_date,True,183,4.742191101261723,3.3782273435414947,8.120418444803217,1.6412414180139225,1.9812887658271046,3.622530183841027
+CAN_BIH_2026_GROUP_GOALS,Canada,Bosnia and Herzegovina,True,legacy_joblib_real,,basic_direct_same_date,False,183,4.364539398426783,3.500850401981655,7.865389800408438,1.1154871580292443,1.3760735027885656,2.49156066081781
+USA_PAR_2026_GROUP_FULL,United States,Paraguay,True,legacy_joblib_real,,basic_direct_same_date,False,183,5.060413458288386,4.0091906020698325,9.06960406035822,1.900325816847698,1.7105864919874203,3.6109123088351183

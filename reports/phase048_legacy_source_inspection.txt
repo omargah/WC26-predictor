@@ -1,0 +1,112 @@
+INSPECCIÓN CÓDIGO LEGACY phase048_full_match_predictor.py
+================================================================================
+
+Archivo: /content/drive/MyDrive/mundial-2026-predictor/docs/legacy_src/phase048_full_match_predictor.py
+Líneas totales: 765
+Coincidencias: 105
+
+Línea 5: FASE 4.8 — Predictor completo de partido
+Línea 8:     - Modelo de goles Poisson + Dixon-Coles
+Línea 9:     - Modelo estable de córners
+Línea 10:     - Modelo estable de tarjetas amarillas
+Línea 13:     data/features/modeling_dataset_advanced.parquet
+Línea 14:     data/features/team_match_history.parquet
+Línea 15:     data/features/team_advanced_history.parquet
+Línea 16:     models/poisson_dc_base.joblib
+Línea 17:     models/corners_cards_poisson_stable.joblib
+Línea 29: import joblib
+Línea 30: from scipy.stats import poisson
+Línea 32: from phase03_poisson_dc import predict_from_feature_row
+Línea 35: DEFAULT_PROJECT_ROOT = Path("/content/drive/MyDrive/Mundial_2026_Model")
+Línea 67: def poisson_over(lambda_total, line):
+Línea 70:     return float(poisson.sf(k, lambda_total))
+Línea 73: def poisson_under(lambda_total, line):
+Línea 74:     return 1.0 - poisson_over(lambda_total, line)
+Línea 82:         out[f"over_{key}"] = poisson_over(lambda_total, line)
+Línea 83:         out[f"under_{key}"] = poisson_under(lambda_total, line)
+Línea 88: def load_assets(project_root=DEFAULT_PROJECT_ROOT):
+Línea 91:     df_adv = pd.read_parquet(project_root / "data/features/modeling_dataset_advanced.parquet")
+Línea 92:     team_history = pd.read_parquet(project_root / "data/features/team_match_history.parquet")
+Línea 93:     team_adv_history = pd.read_parquet(project_root / "data/features/team_advanced_history.parquet")
+Línea 95:     goal_bundle = joblib.load(project_root / "models/poisson_dc_base.joblib")
+Línea 96:     corners_cards_bundle = joblib.load(project_root / "models/corners_cards_poisson_stable.joblib")
+Línea 106:     return df_adv, team_history, team_adv_history, goal_bundle, corners_cards_bundle
+Línea 110: # FEATURES BASE DE GOLES
+Línea 125: def compute_team_pre_features(team_history, equipo, fecha_partido, side_suffix):
+Línea 249: def add_future_elo_features(row, df, equipo_local, equipo_visitante, fecha_partido, neutral):
+Línea 267: def add_future_h2h_features(row, df, equipo_local, equipo_visitante, fecha_partido, max_matches=5, decay=0.35):
+Línea 326: # FEATURES AVANZADAS FUTURAS
+Línea 329: def compute_advanced_pre_features(team_adv_history, equipo, fecha_partido, side_suffix):
+Línea 333:         "corners_for",
+Línea 334:         "corners_against",
+Línea 335:         "yellow_cards_for",
+Línea 336:         "yellow_cards_against",
+Línea 337:         "red_cards_for",
+Línea 338:         "red_cards_against",
+Línea 427:         "corners_local", "corners_visitante", "total_corners",
+Línea 428:         "yellow_cards_local", "yellow_cards_visitante", "total_yellow_cards",
+Línea 429:         "red_cards_local", "red_cards_visitante", "total_red_cards",
+Línea 445:         row["source_id"] = "manual_future_full_prediction"
+Línea 447:     # Features base
+Línea 448:     feats_l = compute_team_pre_features(team_history, equipo_local, fecha_partido, "L")
+Línea 449:     feats_v = compute_team_pre_features(team_history, equipo_visitante, fecha_partido, "V")
+Línea 460:     row = add_future_elo_features(
+Línea 469:     row = add_future_h2h_features(
+Línea 477:     # Features avanzadas
+Línea 478:     adv_l = compute_advanced_pre_features(team_adv_history, equipo_local, fecha_partido, "L")
+Línea 479:     adv_v = compute_advanced_pre_features(team_adv_history, equipo_visitante, fecha_partido, "V")
+Línea 496: # PREDICCIÓN CÓRNERS/TARJETAS
+Línea 499: def predict_pair_from_row(row, model_pack, lines):
+Línea 500:     features = model_pack["features"]
+Línea 501:     medians = model_pack["medians"]
+Línea 502:     scaler = model_pack["scaler"]
+Línea 503:     model_local = model_pack["model_local"]
+Línea 504:     model_visitante = model_pack["model_visitante"]
+Línea 505:     max_side_lambda = model_pack.get("max_side_lambda", 20.0)
+Línea 509:     for c in features:
+Línea 520:     Xs = scaler.transform(X)
+Línea 522:     lambda_local = float(np.clip(model_local.predict(Xs)[0], 0.01, max_side_lambda))
+Línea 523:     lambda_visitante = float(np.clip(model_visitante.predict(Xs)[0], 0.01, max_side_lambda))
+Línea 543:     corners = result["corners"]
+Línea 544:     cards = result["yellow_cards"]
+Línea 549:     print("PREDICCIÓN COMPLETA — GOLES + CÓRNERS + TARJETAS")
+Línea 593:     print("CÓRNERS — MODELO EXPERIMENTAL ESTABLE")
+Línea 595:     print(f"Córners esperados {partido['equipo_local']}: {corners['lambda_local']:.3f}")
+Línea 596:     print(f"Córners esperados {partido['equipo_visitante']}: {corners['lambda_visitante']:.3f}")
+Línea 597:     print(f"Total córners esperado: {corners['lambda_total']:.3f}")
+Línea 599:     print("\nMercados córners:")
+Línea 602:         print(f"  Over {line}: {100 * corners['markets'][f'over_{key}']:.2f}% | Under {line}: {100 * corners['markets'][f'under_{key}']:.2f}%")
+Línea 605:     print("TARJETAS AMARILLAS — MODELO EXPERIMENTAL ESTABLE")
+Línea 607:     print(f"Tarjetas esperadas {partido['equipo_local']}: {cards['lambda_local']:.3f}")
+Línea 608:     print(f"Tarjetas esperadas {partido['equipo_visitante']}: {cards['lambda_visitante']:.3f}")
+Línea 609:     print(f"Total tarjetas esperado: {cards['lambda_total']:.3f}")
+Línea 611:     print("\nMercados tarjetas:")
+Línea 614:         print(f"  Over {line}: {100 * cards['markets'][f'over_{key}']:.2f}% | Under {line}: {100 * cards['markets'][f'under_{key}']:.2f}%")
+Línea 619:     print("El modelo de goles está entrenado con todo el histórico disponible.")
+Línea 620:     print("Los modelos de córners y tarjetas son experimentales porque usan 290 partidos con StatsBomb Open Data.")
+Línea 623: def append_prediction_summary(result, project_root=DEFAULT_PROJECT_ROOT):
+Línea 625:     out_path = project_root / "data/predictions/manual_full_match_predictions.csv"
+Línea 630:     corners = result["corners"]
+Línea 631:     cards = result["yellow_cards"]
+Línea 658:         "lambda_corners_local": corners["lambda_local"],
+Línea 659:         "lambda_corners_visitante": corners["lambda_visitante"],
+Línea 660:         "lambda_corners_total": corners["lambda_total"],
+Línea 662:         "lambda_yellow_cards_local": cards["lambda_local"],
+Línea 663:         "lambda_yellow_cards_visitante": cards["lambda_visitante"],
+Línea 664:         "lambda_yellow_cards_total": cards["lambda_total"],
+Línea 669:         row[f"over_corners_{key}"] = corners["markets"][f"over_{key}"]
+Línea 670:         row[f"under_corners_{key}"] = corners["markets"][f"under_{key}"]
+Línea 674:         row[f"over_cards_{key}"] = cards["markets"][f"over_{key}"]
+Línea 675:         row[f"under_cards_{key}"] = cards["markets"][f"under_{key}"]
+Línea 708:     df_adv, team_history, team_adv_history, goal_bundle, cc_bundle = load_assets(project_root)
+Línea 725:     goles = predict_from_feature_row(row, goal_bundle)
+Línea 727:     corners = predict_pair_from_row(
+Línea 729:         model_pack=cc_bundle["corners"],
+Línea 730:         lines=cc_bundle["corners_lines"]
+Línea 733:     yellow_cards = predict_pair_from_row(
+Línea 735:         model_pack=cc_bundle["yellow_cards"],
+Línea 736:         lines=cc_bundle["cards_lines"]
+Línea 751:         "features_row": row,
+Línea 753:         "corners": corners,
+Línea 754:         "yellow_cards": yellow_cards,
+Línea 761:         out_path = append_prediction_summary(result, project_root=project_root)

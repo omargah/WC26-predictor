@@ -1,0 +1,5 @@
+case_id,home_team,away_team,stage,group,notes,old_model_prob_home,old_model_prob_draw,old_model_prob_away,old_model_lambda_home,old_model_lambda_away,old_model_top_score,new_model_prob_home,new_model_prob_draw,new_model_prob_away,new_model_lambda_home,new_model_lambda_away,new_model_top_score,actual_home_goals,actual_away_goals,actual_result_1x2
+MEX_RSA_2026_GROUP,Mexico,South Africa,group,A,Caso de control guardado por el usuario. Completar predicción antigua después.,,,,,,,,,,,,,2,0,0
+USA_PAR_2026_GROUP,United States,Paraguay,group,D,Caso de control guardado por el usuario. Completar predicción antigua después.,,,,,,,,,,,,,4,1,0
+KOR_CZE_2026_GROUP,South Korea,Czechia,group,A,Caso de control guardado por el usuario. Completar predicción antigua después.,,,,,,,,,,,,,,,
+CAN_BIH_2026_GROUP,Canada,Bosnia and Herzegovina,group,B,Caso de control guardado por el usuario. Completar predicción antigua después.,,,,,,,,,,,,,1,1,1
