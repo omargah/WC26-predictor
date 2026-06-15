@@ -1,0 +1,62 @@
+# Portfolio Source-Available License
+
+Copyright (c) 2026 Omar Garcia.
+All rights reserved.
+
+This repository is made publicly available only for portfolio, academic review, technical demonstration, and professional evaluation purposes.
+
+## Permitted use
+
+You may view the contents of this repository for personal, academic, recruitment, or evaluation purposes.
+
+You may reference this project with proper attribution to Omar Garcia, including the repository name and author name, when discussing, reviewing, or evaluating the work.
+
+## Restrictions
+
+Unless prior written permission is granted by Omar Garcia, you may not:
+
+1. copy, reproduce, redistribute, sublicense, sell, or republish this project or any substantial portion of it;
+2. modify, adapt, translate, transform, or create derivative works based on this project;
+3. use this project, its code, models, simulations, reports, predictions, documentation, or outputs for commercial, production, consulting, betting, trading, or business purposes;
+4. incorporate this project or any part of it into another software project, product, service, dataset, model, report, or commercial workflow;
+5. train, fine-tune, benchmark, or validate third-party models using this repository, its generated outputs, reports, or simulations without permission;
+6. remove or alter copyright notices, authorship notices, or attribution references.
+
+## Code, models, data, and outputs
+
+This restriction applies to all repository contents, including but not limited to:
+
+- source code;
+- notebooks;
+- documentation;
+- configuration files;
+- model definitions;
+- trained or serialized models, if included;
+- simulations;
+- predictions;
+- reports;
+- visualizations;
+- derived datasets;
+- analytical outputs.
+
+## External data and third-party materials
+
+This project may reference or process external datasets, APIs, team names, competition names, rankings, statistics, odds, or other third-party materials.
+
+No ownership is claimed over third-party data, trademarks, logos, team names, competition names, or external resources. Such materials remain subject to the rights, terms, and licenses of their respective owners.
+
+Users are responsible for ensuring that any external data, APIs, or third-party materials are accessed and used according to their applicable terms.
+
+## No warranty
+
+This project is provided for demonstration and evaluation purposes only.
+
+The author makes no warranties, express or implied, regarding the accuracy, completeness, reliability, performance, or suitability of the code, models, predictions, simulations, reports, or outputs.
+
+The project is not intended to provide financial, betting, legal, commercial, or professional advice.
+
+## Permission requests
+
+For permission to use, modify, redistribute, commercialize, or build upon this project, contact the author directly.
+
+Any permission must be granted in writing by Omar Garcia.
