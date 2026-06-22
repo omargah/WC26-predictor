@@ -1014,16 +1014,9 @@ def latest_available_date(matches):
 
 init_state()
 
-# Auto-update al abrir la app: se ejecuta antes de cargar los datos en caché.
-with st.spinner("Revisando actualización diaria..."):
-    boot_update_result = auto_update_once_per_session()
-
-if boot_update_result is not None:
-    if boot_update_result["code"] == 0:
-        st.toast("Actualización diaria completada.", icon="✅")
-    else:
-        st.toast("Falló la actualización diaria automática.", icon="⚠️")
-
+# Producción: no se ejecuta actualización pesada al abrir.
+# La app carga archivos precalculados y el usuario puede actualizar manualmente desde la barra lateral.
+boot_update_result = None
 matches_all = load_all_matches_cached()
 
 if matches_all.empty:
@@ -1056,8 +1049,8 @@ with st.sidebar:
 
     auto_update_enabled = st.checkbox(
         "Actualizar automáticamente al abrir si cambió el día",
-        value=True,
-        help="Al abrir la app, si todavía no se actualizó hoy, ejecuta update_worldcup_state.py --scope full una vez por sesión.",
+        value=False,
+        help="En producción queda apagado por defecto para que la app cargue rápido. Actívalo solo si quieres ejecutar update_worldcup_state.py --scope full.",
     )
 
     last_update = latest_update_date()
