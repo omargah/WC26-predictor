@@ -1,0 +1,73 @@
+group,fecha,home,away,home_goals,away_goals,source
+A,2026-06-11,South Korea,Czech Republic,2,1,real
+A,2026-06-11,Mexico,South Africa,2,0,real
+B,2026-06-12,Canada,Bosnia and Herzegovina,1,1,real
+D,2026-06-12,United States,Paraguay,4,1,real
+C,2026-06-13,Haiti,Scotland,0,1,real
+B,2026-06-13,Qatar,Switzerland,1,1,real
+C,2026-06-13,Brazil,Morocco,1,1,real
+D,2026-06-13,Australia,Turkey,2,0,real
+E,2026-06-14,Germany,Curaçao,7,1,real
+E,2026-06-14,Ivory Coast,Ecuador,1,0,real
+F,2026-06-14,Netherlands,Japan,2,2,real
+F,2026-06-14,Sweden,Tunisia,5,1,real
+H,2026-06-15,Saudi Arabia,Uruguay,1,1,real
+G,2026-06-15,Belgium,Egypt,1,1,real
+G,2026-06-15,Iran,New Zealand,2,2,real
+H,2026-06-15,Spain,Cape Verde,0,0,real
+J,2026-06-16,Austria,Jordan,3,1,real
+I,2026-06-16,Iraq,Norway,1,4,real
+I,2026-06-16,France,Senegal,3,1,real
+J,2026-06-16,Argentina,Algeria,3,0,real
+L,2026-06-17,Ghana,Panama,1,0,real
+L,2026-06-17,England,Croatia,4,2,real
+K,2026-06-17,Portugal,DR Congo,1,1,real
+K,2026-06-17,Uzbekistan,Colombia,1,3,real
+A,2026-06-18,Mexico,South Korea,1,0,real
+B,2026-06-18,Canada,Qatar,6,0,real
+A,2026-06-18,Czech Republic,South Africa,1,1,real
+B,2026-06-18,Switzerland,Bosnia and Herzegovina,4,1,real
+D,2026-06-19,Turkey,Paraguay,0,1,real
+D,2026-06-19,United States,Australia,2,0,real
+C,2026-06-19,Scotland,Morocco,0,1,real
+C,2026-06-19,Brazil,Haiti,3,0,real
+F,2026-06-20,Tunisia,Japan,1,3,simulated
+E,2026-06-20,Germany,Ivory Coast,1,2,simulated
+E,2026-06-20,Ecuador,Curaçao,5,1,simulated
+F,2026-06-20,Netherlands,Sweden,3,0,simulated
+H,2026-06-21,Spain,Saudi Arabia,1,0,simulated
+G,2026-06-21,New Zealand,Egypt,3,3,simulated
+G,2026-06-21,Belgium,Iran,3,0,simulated
+H,2026-06-21,Uruguay,Cape Verde,3,1,simulated
+J,2026-06-22,Argentina,Austria,1,0,simulated
+J,2026-06-22,Jordan,Algeria,1,1,simulated
+I,2026-06-22,France,Iraq,2,2,simulated
+I,2026-06-22,Norway,Senegal,4,2,simulated
+K,2026-06-23,Portugal,Uzbekistan,2,2,simulated
+K,2026-06-23,Colombia,DR Congo,4,0,simulated
+L,2026-06-23,Panama,Croatia,1,1,simulated
+L,2026-06-23,England,Ghana,1,1,simulated
+C,2026-06-24,Scotland,Brazil,1,1,simulated
+B,2026-06-24,Canada,Switzerland,0,0,simulated
+A,2026-06-24,South Africa,South Korea,1,6,simulated
+B,2026-06-24,Bosnia and Herzegovina,Qatar,2,1,simulated
+A,2026-06-24,Mexico,Czech Republic,3,0,simulated
+C,2026-06-24,Morocco,Haiti,2,0,simulated
+E,2026-06-25,Curaçao,Ivory Coast,2,5,simulated
+D,2026-06-25,United States,Turkey,3,2,simulated
+D,2026-06-25,Paraguay,Australia,2,1,simulated
+E,2026-06-25,Ecuador,Germany,0,1,simulated
+F,2026-06-25,Japan,Sweden,1,3,simulated
+F,2026-06-25,Tunisia,Netherlands,0,1,simulated
+G,2026-06-26,Egypt,Iran,0,1,simulated
+H,2026-06-26,Uruguay,Spain,1,2,simulated
+I,2026-06-26,Norway,France,2,1,simulated
+H,2026-06-26,Cape Verde,Saudi Arabia,3,2,simulated
+I,2026-06-26,Senegal,Iraq,1,1,simulated
+G,2026-06-26,New Zealand,Belgium,0,4,simulated
+K,2026-06-27,Colombia,Portugal,1,3,simulated
+K,2026-06-27,DR Congo,Uzbekistan,0,1,simulated
+L,2026-06-27,Panama,England,0,2,simulated
+J,2026-06-27,Algeria,Austria,1,1,simulated
+J,2026-06-27,Jordan,Argentina,0,2,simulated
+L,2026-06-27,Croatia,Ghana,3,0,simulated

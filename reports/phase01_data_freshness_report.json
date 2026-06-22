@@ -1,0 +1,24 @@
+{
+    "fecha_minima_dataset_completo": "1872-11-30",
+    "fecha_maxima_dataset_completo_incluye_fixture": "2026-06-27",
+    "fecha_maxima_partido_jugado": "2026-06-19",
+    "total_partidos_historicos": 49477,
+    "total_partidos_jugados": 49437,
+    "total_partidos_pendientes": 40,
+    "columnas_dataset": [
+        "date",
+        "home_team",
+        "away_team",
+        "home_score",
+        "away_score",
+        "tournament",
+        "city",
+        "country",
+        "neutral"
+    ],
+    "partidos_mundial_2026_total": 72,
+    "partidos_mundial_2026_jugados": 32,
+    "partidos_mundial_2026_pendientes": 40,
+    "fecha_maxima_mundial_2026_jugado": "2026-06-19",
+    "proximo_partido_mundial_2026": "2026-06-20"
+}

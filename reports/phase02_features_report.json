@@ -1,0 +1,25 @@
+{
+    "created_at": "2026-06-22T11:55:01",
+    "start_year": 2010,
+    "input": "/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/processed/matches_clean.parquet",
+    "n_rows_all": 15888,
+    "n_rows_train_played": 15856,
+    "n_rows_pending": 32,
+    "date_min_all": "2010-01-02 00:00:00",
+    "date_max_all": "2026-06-27 00:00:00",
+    "date_min_train": "2010-01-02 00:00:00",
+    "date_max_train": "2026-06-21 00:00:00",
+    "n_features_candidate": 146,
+    "leakage_report": {
+        "leakage_L": 0,
+        "leakage_V": 0,
+        "leakage_total": 0
+    },
+    "outputs": {
+        "team_state_history": "/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/features/team_state_history.parquet",
+        "modeling_dataset_all": "/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/features/modeling_dataset_all.parquet",
+        "modeling_dataset_train": "/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/features/modeling_dataset_train.parquet",
+        "modeling_dataset_pending": "/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/features/modeling_dataset_pending.parquet",
+        "null_report": "/Users/omargah/Documents/Workspace/mundial-2026-predictor/reports/phase02_feature_null_report.csv"
+    }
+}

@@ -1,0 +1,20 @@
+{
+  "run_name": "fixed_original_seed42",
+  "run_dir": "/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/mc_original_v2_runs/fixed_original_seed42",
+  "n_simulations_summary": 100,
+  "n_simulations_results": 100,
+  "n_simulations_progress": 100,
+  "n_matches_total": 3200,
+  "expected_matches_total": 3200,
+  "errors": [],
+  "warnings": [],
+  "metadata": {
+    "played_policy": "fixed",
+    "n_total_requested": 100,
+    "n_completed": 100,
+    "base_seed": 42,
+    "run_name": "fixed_original_seed42",
+    "method": "original_technical_v2_checkpoint_resume",
+    "quality_note": "Modelo original/técnico: recalcula features ronda por ronda y no usa cache fast de lambdas."
+  }
+}

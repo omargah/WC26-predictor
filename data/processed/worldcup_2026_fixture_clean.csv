@@ -1,0 +1,73 @@
+match_id,fecha,equipo_local,equipo_visitante,goles_local,goles_visitante,resultado_1x2,over_2_5,btts,torneo,ciudad,pais_sede,neutral,peso_competicion,source_id,is_played
+86ad458e343b0967,2026-06-11,Mexico,South Africa,2.0,0.0,L,0.0,0.0,FIFA World Cup,Mexico City,Mexico,0,1.0,international_results_martj42,True
+131a3f729624d0a8,2026-06-11,South Korea,Czech Republic,2.0,1.0,L,1.0,1.0,FIFA World Cup,Zapopan,Mexico,1,1.0,international_results_martj42,True
+9d0c4ad9b5b8619f,2026-06-12,Canada,Bosnia and Herzegovina,1.0,1.0,E,0.0,1.0,FIFA World Cup,Toronto,Canada,0,1.0,international_results_martj42,True
+cb50098f5be0c371,2026-06-12,United States,Paraguay,4.0,1.0,L,1.0,1.0,FIFA World Cup,Inglewood,United States,0,1.0,international_results_martj42,True
+7439e5b0a3bd216b,2026-06-13,Qatar,Switzerland,1.0,1.0,E,0.0,1.0,FIFA World Cup,Santa Clara,United States,1,1.0,international_results_martj42,True
+d1ea50691693644b,2026-06-13,Brazil,Morocco,1.0,1.0,E,0.0,1.0,FIFA World Cup,East Rutherford,United States,1,1.0,international_results_martj42,True
+4c48ec48a0ffee65,2026-06-13,Haiti,Scotland,0.0,1.0,V,0.0,0.0,FIFA World Cup,Foxborough,United States,1,1.0,international_results_martj42,True
+f15a4336f443cc1f,2026-06-13,Australia,Turkey,2.0,0.0,L,0.0,0.0,FIFA World Cup,Vancouver,Canada,1,1.0,international_results_martj42,True
+3d75f7c8caa54885,2026-06-14,Ivory Coast,Ecuador,1.0,0.0,L,0.0,0.0,FIFA World Cup,Philadelphia,United States,1,1.0,international_results_martj42,True
+261e4bdeebab8d39,2026-06-14,Germany,Curaçao,7.0,1.0,L,1.0,1.0,FIFA World Cup,Houston,United States,1,1.0,international_results_martj42,True
+80114cf261777991,2026-06-14,Sweden,Tunisia,5.0,1.0,L,1.0,1.0,FIFA World Cup,Guadalupe,Mexico,1,1.0,international_results_martj42,True
+7500d0566efd1dc8,2026-06-14,Netherlands,Japan,2.0,2.0,E,1.0,1.0,FIFA World Cup,Arlington,United States,1,1.0,international_results_martj42,True
+7d1860dd399bab1d,2026-06-15,Belgium,Egypt,1.0,1.0,E,0.0,1.0,FIFA World Cup,Seattle,United States,1,1.0,international_results_martj42,True
+ea13d9cdadbd8079,2026-06-15,Iran,New Zealand,2.0,2.0,E,1.0,1.0,FIFA World Cup,Inglewood,United States,1,1.0,international_results_martj42,True
+efea9ca7efb197a9,2026-06-15,Spain,Cape Verde,0.0,0.0,E,0.0,0.0,FIFA World Cup,Atlanta,United States,1,1.0,international_results_martj42,True
+60e7f03769a53851,2026-06-15,Saudi Arabia,Uruguay,1.0,1.0,E,0.0,1.0,FIFA World Cup,Miami Gardens,United States,1,1.0,international_results_martj42,True
+b7a63942e6d7061a,2026-06-16,Iraq,Norway,1.0,4.0,V,1.0,1.0,FIFA World Cup,Foxborough,United States,1,1.0,international_results_martj42,True
+c235dc3e393ecc13,2026-06-16,France,Senegal,3.0,1.0,L,1.0,1.0,FIFA World Cup,East Rutherford,United States,1,1.0,international_results_martj42,True
+a5c74ce6a2411839,2026-06-16,Austria,Jordan,3.0,1.0,L,1.0,1.0,FIFA World Cup,Santa Clara,United States,1,1.0,international_results_martj42,True
+c3d1b13169e8fa58,2026-06-16,Argentina,Algeria,3.0,0.0,L,1.0,0.0,FIFA World Cup,Kansas City,United States,1,1.0,international_results_martj42,True
+c8fff951117ec882,2026-06-17,Portugal,DR Congo,1.0,1.0,E,0.0,1.0,FIFA World Cup,Houston,United States,1,1.0,international_results_martj42,True
+d5f0bcd22b536299,2026-06-17,Uzbekistan,Colombia,1.0,3.0,V,1.0,1.0,FIFA World Cup,Mexico City,Mexico,1,1.0,international_results_martj42,True
+a7d87fa7e5fa5c99,2026-06-17,England,Croatia,4.0,2.0,L,1.0,1.0,FIFA World Cup,Arlington,United States,1,1.0,international_results_martj42,True
+6298f6de9df2f2a2,2026-06-17,Ghana,Panama,1.0,0.0,L,0.0,0.0,FIFA World Cup,Toronto,Canada,1,1.0,international_results_martj42,True
+980a6822ca1b13ab,2026-06-18,Czech Republic,South Africa,1.0,1.0,E,0.0,1.0,FIFA World Cup,Atlanta,United States,1,1.0,international_results_martj42,True
+21cb9869f780f228,2026-06-18,Mexico,South Korea,1.0,0.0,L,0.0,0.0,FIFA World Cup,Zapopan,Mexico,0,1.0,international_results_martj42,True
+ae4e08b967a18d3b,2026-06-18,Switzerland,Bosnia and Herzegovina,4.0,1.0,L,1.0,1.0,FIFA World Cup,Inglewood,United States,1,1.0,international_results_martj42,True
+837d6934cc9f4341,2026-06-18,Canada,Qatar,6.0,0.0,L,1.0,0.0,FIFA World Cup,Vancouver,Canada,0,1.0,international_results_martj42,True
+4c7af33073234782,2026-06-19,United States,Australia,2.0,0.0,L,0.0,0.0,FIFA World Cup,Seattle,United States,0,1.0,international_results_martj42,True
+2b0010f3d3b09373,2026-06-19,Turkey,Paraguay,0.0,1.0,V,0.0,0.0,FIFA World Cup,Santa Clara,United States,1,1.0,international_results_martj42,True
+7023d73365445dd8,2026-06-19,Scotland,Morocco,0.0,1.0,V,0.0,0.0,FIFA World Cup,Foxborough,United States,1,1.0,international_results_martj42,True
+9b0ff40dcbfa944a,2026-06-19,Brazil,Haiti,3.0,0.0,L,1.0,0.0,FIFA World Cup,Philadelphia,United States,1,1.0,international_results_martj42,True
+605451ea3d0f42f8,2026-06-20,Germany,Ivory Coast,2.0,1.0,L,1.0,1.0,FIFA World Cup,Toronto,Canada,1,1.0,international_results_martj42,True
+61e0460e91e23589,2026-06-20,Ecuador,Curaçao,0.0,0.0,E,0.0,0.0,FIFA World Cup,Kansas City,United States,1,1.0,international_results_martj42,True
+c7f73f775ddbbd3c,2026-06-20,Netherlands,Sweden,5.0,1.0,L,1.0,1.0,FIFA World Cup,Houston,United States,1,1.0,international_results_martj42,True
+05ae05f5791fbfad,2026-06-20,Tunisia,Japan,0.0,4.0,V,1.0,0.0,FIFA World Cup,Guadalupe,Mexico,1,1.0,international_results_martj42,True
+6065446f2eec3c2a,2026-06-21,Belgium,Iran,0.0,0.0,E,0.0,0.0,FIFA World Cup,Inglewood,United States,1,1.0,international_results_martj42,True
+48fe9da723c377af,2026-06-21,New Zealand,Egypt,1.0,3.0,V,1.0,1.0,FIFA World Cup,Vancouver,Canada,1,1.0,international_results_martj42,True
+0b213cbe3fa2eef7,2026-06-21,Spain,Saudi Arabia,4.0,0.0,L,1.0,0.0,FIFA World Cup,Atlanta,United States,1,1.0,international_results_martj42,True
+a4b0238ea0bac6fa,2026-06-21,Uruguay,Cape Verde,2.0,2.0,E,1.0,1.0,FIFA World Cup,Miami Gardens,United States,1,1.0,international_results_martj42,True
+38cca988323cfca8,2026-06-22,France,Iraq,,,,,,FIFA World Cup,Philadelphia,United States,1,1.0,international_results_martj42,False
+45780b62ef42ae1e,2026-06-22,Norway,Senegal,,,,,,FIFA World Cup,East Rutherford,United States,1,1.0,international_results_martj42,False
+00beeaa52fbe7767,2026-06-22,Argentina,Austria,,,,,,FIFA World Cup,Arlington,United States,1,1.0,international_results_martj42,False
+122bc12eaeea7727,2026-06-22,Jordan,Algeria,,,,,,FIFA World Cup,Santa Clara,United States,1,1.0,international_results_martj42,False
+80f84ac04dff832e,2026-06-23,Portugal,Uzbekistan,,,,,,FIFA World Cup,Houston,United States,1,1.0,international_results_martj42,False
+8671503a9b6ea9d1,2026-06-23,Colombia,DR Congo,,,,,,FIFA World Cup,Zapopan,Mexico,1,1.0,international_results_martj42,False
+a985a8dc88389197,2026-06-23,England,Ghana,,,,,,FIFA World Cup,Foxborough,United States,1,1.0,international_results_martj42,False
+a3e0450788838348,2026-06-23,Panama,Croatia,,,,,,FIFA World Cup,Toronto,Canada,1,1.0,international_results_martj42,False
+3230c1f6cebd66c3,2026-06-24,Canada,Switzerland,,,,,,FIFA World Cup,Vancouver,Canada,0,1.0,international_results_martj42,False
+3f17cd69f3080a9f,2026-06-24,South Africa,South Korea,,,,,,FIFA World Cup,Guadalupe,Mexico,1,1.0,international_results_martj42,False
+f5fcd4529ac85518,2026-06-24,Mexico,Czech Republic,,,,,,FIFA World Cup,Mexico City,Mexico,0,1.0,international_results_martj42,False
+7460cd6511fca49e,2026-06-24,Bosnia and Herzegovina,Qatar,,,,,,FIFA World Cup,Seattle,United States,1,1.0,international_results_martj42,False
+fccedb15c3cffb95,2026-06-24,Morocco,Haiti,,,,,,FIFA World Cup,Atlanta,United States,1,1.0,international_results_martj42,False
+1ad90475bac8f5e1,2026-06-24,Scotland,Brazil,,,,,,FIFA World Cup,Miami Gardens,United States,1,1.0,international_results_martj42,False
+4e8d4fbe42a541b0,2026-06-25,United States,Turkey,,,,,,FIFA World Cup,Inglewood,United States,0,1.0,international_results_martj42,False
+581ff7172eaa7094,2026-06-25,Paraguay,Australia,,,,,,FIFA World Cup,Santa Clara,United States,1,1.0,international_results_martj42,False
+482e9663faea8107,2026-06-25,Curaçao,Ivory Coast,,,,,,FIFA World Cup,Philadelphia,United States,1,1.0,international_results_martj42,False
+909e8063944e67af,2026-06-25,Ecuador,Germany,,,,,,FIFA World Cup,East Rutherford,United States,1,1.0,international_results_martj42,False
+bd2e5a14a87d3424,2026-06-25,Japan,Sweden,,,,,,FIFA World Cup,Arlington,United States,1,1.0,international_results_martj42,False
+c6b8ae9e26499afd,2026-06-25,Tunisia,Netherlands,,,,,,FIFA World Cup,Kansas City,United States,1,1.0,international_results_martj42,False
+5b4a42331bed7ea3,2026-06-26,Cape Verde,Saudi Arabia,,,,,,FIFA World Cup,Houston,United States,1,1.0,international_results_martj42,False
+2a662739d52e9dd1,2026-06-26,Egypt,Iran,,,,,,FIFA World Cup,Seattle,United States,1,1.0,international_results_martj42,False
+db0b06e6871b49a0,2026-06-26,New Zealand,Belgium,,,,,,FIFA World Cup,Vancouver,Canada,1,1.0,international_results_martj42,False
+3f0e096f7c7e0b66,2026-06-26,Norway,France,,,,,,FIFA World Cup,Foxborough,United States,1,1.0,international_results_martj42,False
+cad8b99802d5425b,2026-06-26,Senegal,Iraq,,,,,,FIFA World Cup,Toronto,Canada,1,1.0,international_results_martj42,False
+37f47038b1b955dc,2026-06-26,Uruguay,Spain,,,,,,FIFA World Cup,Zapopan,Mexico,1,1.0,international_results_martj42,False
+07a2ba327f82d28a,2026-06-27,DR Congo,Uzbekistan,,,,,,FIFA World Cup,Atlanta,United States,1,1.0,international_results_martj42,False
+1e9b421e3755422c,2026-06-27,Panama,England,,,,,,FIFA World Cup,East Rutherford,United States,1,1.0,international_results_martj42,False
+7bc6f344a6dadb26,2026-06-27,Algeria,Austria,,,,,,FIFA World Cup,Kansas City,United States,1,1.0,international_results_martj42,False
+8372c41ecbac576c,2026-06-27,Jordan,Argentina,,,,,,FIFA World Cup,Arlington,United States,1,1.0,international_results_martj42,False
+06ec6a9aebb5f15a,2026-06-27,Colombia,Portugal,,,,,,FIFA World Cup,Miami Gardens,United States,1,1.0,international_results_martj42,False
+f7dc96fa5daaa4ad,2026-06-27,Croatia,Ghana,,,,,,FIFA World Cup,Philadelphia,United States,1,1.0,international_results_martj42,False

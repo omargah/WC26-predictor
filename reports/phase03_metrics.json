@@ -1,0 +1,14 @@
+{
+    "n_validation": 3170,
+    "mae_goles_local": 1.0209273089969804,
+    "mae_goles_visitante": 0.8494612569069722,
+    "mae_total": 1.8703885659039525,
+    "rmse_goles_local": 1.3504281583991347,
+    "rmse_goles_visitante": 1.1231039057601024,
+    "accuracy_1x2": 0.6091482649842271,
+    "log_loss_1x2": 0.8591363305861949,
+    "lambda_local_promedio": 1.628923649523608,
+    "lambda_visitante_promedio": 1.1148662050120495,
+    "goles_local_promedio_real": 1.6425867507886436,
+    "goles_visitante_promedio_real": 1.1425867507886436
+}

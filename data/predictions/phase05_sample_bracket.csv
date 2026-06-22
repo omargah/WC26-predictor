@@ -1,0 +1,32 @@
+round,match_number,team_a,team_b,goals_a,goals_b,lambda_a,lambda_b,winner,loser,decided_by_penalties
+Round of 32,1,Norway,Australia,0,1,1.4875815139489421,1.0503626089384364,Australia,Norway,False
+Round of 32,2,Paraguay,Brazil,1,1,0.9793097129122664,1.5955115929090962,Paraguay,Brazil,True
+Round of 32,3,Netherlands,Japan,2,0,1.245438465561961,1.2545782414829911,Netherlands,Japan,False
+Round of 32,4,Morocco,Iran,1,1,1.572247970178757,0.9937999791612715,Morocco,Iran,True
+Round of 32,5,Argentina,Bosnia and Herzegovina,2,0,2.6977307584046546,0.5791904900561718,Argentina,Bosnia and Herzegovina,False
+Round of 32,6,Germany,France,1,2,1.099075833407057,1.421648945875155,France,Germany,False
+Round of 32,7,Ivory Coast,Cape Verde,1,1,1.7668709094768298,0.8843317254358192,Ivory Coast,Cape Verde,True
+Round of 32,8,Canada,Croatia,0,1,1.1889435904359753,1.3141918696302866,Croatia,Canada,False
+Round of 32,9,United States,Ecuador,3,3,1.1601259777054933,1.346836490197664,Ecuador,United States,True
+Round of 32,10,Sweden,Switzerland,1,3,1.022259990627299,1.5284761355486367,Switzerland,Sweden,False
+Round of 32,11,England,Scotland,1,0,1.7879806273700862,0.8738909002041357,England,Scotland,False
+Round of 32,12,Spain,Austria,5,0,1.834261351181454,0.8518415322841473,Spain,Austria,False
+Round of 32,13,Mexico,Ghana,3,1,2.0790745474318144,0.7515363034625597,Mexico,Ghana,False
+Round of 32,14,South Korea,Portugal,1,4,0.9928698802856946,1.5737208178280082,Portugal,South Korea,False
+Round of 32,15,Belgium,Uzbekistan,1,2,1.6616091746315484,0.9403534981963944,Uzbekistan,Belgium,False
+Round of 32,16,Colombia,Uruguay,1,0,1.4979937773578489,1.043061742723609,Colombia,Uruguay,False
+Round of 16,1,Australia,Paraguay,0,1,1.2256799392816895,1.274802621731497,Paraguay,Australia,False
+Round of 16,2,Netherlands,Morocco,3,1,1.2160825958436579,1.2848633845598414,Netherlands,Morocco,False
+Round of 16,3,Argentina,France,1,1,1.3401633855112598,1.1659026182124208,Argentina,France,True
+Round of 16,4,Ivory Coast,Croatia,0,4,1.1550873171515668,1.3527115888114059,Croatia,Ivory Coast,False
+Round of 16,5,Ecuador,Switzerland,1,2,1.2712346429166745,1.2291200595470375,Switzerland,Ecuador,False
+Round of 16,6,England,Spain,0,1,1.0430087214157986,1.4980699278132927,Spain,England,False
+Round of 16,7,Mexico,Portugal,2,3,1.1756683825320209,1.3290312329696792,Portugal,Mexico,False
+Round of 16,8,Uzbekistan,Colombia,1,4,0.8461639945331392,1.8465687621961395,Colombia,Uzbekistan,False
+Quarterfinal,1,Paraguay,Netherlands,2,0,1.0608423974321843,1.472886079762743,Paraguay,Netherlands,False
+Quarterfinal,2,Argentina,Croatia,1,2,1.769739492459102,0.8828983060263085,Croatia,Argentina,False
+Quarterfinal,3,Switzerland,Spain,1,2,0.8788897042404131,1.7778112457812916,Spain,Switzerland,False
+Quarterfinal,4,Portugal,Colombia,1,2,1.2236024643140013,1.2769670261133363,Colombia,Portugal,False
+Semifinal,1,Paraguay,Croatia,1,3,1.1697337357147268,1.3357740760082348,Croatia,Paraguay,False
+Semifinal,2,Spain,Colombia,0,1,1.5664787255914583,0.997460083225863,Colombia,Spain,False
+Final,1,Croatia,Colombia,1,0,1.0639931118410435,1.4685245445775323,Croatia,Colombia,False

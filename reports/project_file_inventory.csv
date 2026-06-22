@@ -1,0 +1,16 @@
+label,path,exists,status,description
+matches_clean,/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/processed/matches_clean.parquet,True,OK,Dataset histórico limpio de partidos internacionales.
+worldcup_fixture_clean,/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/processed/worldcup_2026_fixture_clean.csv,True,OK,Fixture limpio del Mundial 2026.
+modeling_dataset_all,/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/features/modeling_dataset_all.parquet,True,OK,Dataset de modelado con partidos jugados y pendientes.
+modeling_dataset_train,/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/features/modeling_dataset_train.parquet,True,OK,Dataset de entrenamiento sin fixtures futuros.
+modeling_dataset_pending,/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/features/modeling_dataset_pending.parquet,True,OK,Dataset de partidos pendientes para predicción.
+poisson_dc_base,/Users/omargah/Documents/Workspace/mundial-2026-predictor/models/poisson_dc_base.joblib,True,OK,Modelo Poisson/Dixon-Coles entrenado.
+phase03_metrics,/Users/omargah/Documents/Workspace/mundial-2026-predictor/reports/phase03_metrics.json,True,OK,Métricas de validación del modelo de goles.
+phase03_pending_predictions,/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/phase03_pending_predictions.csv,True,OK,Predicciones de partidos pendientes.
+group_matches_fixed,/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/phase05_v2_group_matches_once_fixed.csv,True,OK,Partidos de grupo simulados con resultados reales fijos.
+round_of_32_fixed,/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/phase05_v2_round_of_32_fixed.csv,True,OK,Cruces de Round of 32 del escenario fixed.
+full_tournament_results_fixed,/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/phase05_v2_full_tournament_results_fixed.csv,True,OK,Una simulación completa del torneo fixed.
+mc_original_fixed_results,/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/mc_original_v2_runs/fixed_original_seed42/match_results.csv,True,OK,Resultados KO del Monte Carlo original/técnico fixed.
+mc_original_fixed_champions,/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/mc_original_v2_runs/fixed_original_seed42/champion_probabilities.csv,True,OK,Probabilidades de campeón del Monte Carlo original/técnico fixed.
+mc_original_fixed_rounds,/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/mc_original_v2_runs/fixed_original_seed42/round_probabilities.csv,True,OK,Probabilidades de avance por ronda del Monte Carlo original/técnico fixed.
+mc_original_fixed_metadata,/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/mc_original_v2_runs/fixed_original_seed42/metadata.json,True,OK,Metadata de corrida Monte Carlo original/técnico fixed.

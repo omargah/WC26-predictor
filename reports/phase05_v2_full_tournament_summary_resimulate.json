@@ -1,0 +1,10 @@
+{
+  "played_policy": "resimulate",
+  "seed": 42,
+  "champion": "Spain",
+  "runner_up": "Paraguay",
+  "third_place": "Uruguay",
+  "fourth_place": "England",
+  "final_match": 104,
+  "final_decided_by": "90"
+}

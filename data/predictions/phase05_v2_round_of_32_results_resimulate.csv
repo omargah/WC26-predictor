@@ -1,0 +1,17 @@
+round,match_number,slot_a,slot_b,team_a,team_b,group_a,group_b,lambda_a_90,lambda_b_90,goals_a_90,goals_b_90,goals_a_et,goals_b_et,goals_a_total,goals_b_total,went_to_extra_time,went_to_penalties,p_penalty_a,penalty_winner,winner,loser,decided_by
+Round of 32,73,2A,2B,South Korea,Canada,A,B,1.0707483343128807,1.087391415297743,2,0,0,0,2,0,False,False,0.49833569804815675,,South Korea,Canada,90
+Round of 32,74,1E,3D,Ecuador,Paraguay,E,D,1.3524185617336668,0.7847872023467851,1,1,1,0,2,1,True,False,0.5565205280859963,,Ecuador,Paraguay,ET
+Round of 32,75,1F,2C,Netherlands,Morocco,F,C,1.328988142908929,1.2182937177946598,2,1,0,0,2,1,False,False,0.5110676343764465,,Netherlands,Morocco,90
+Round of 32,76,1C,2F,Brazil,Sweden,C,F,2.485303190480952,0.9058821191072632,1,0,0,0,1,0,False,False,0.6,,Brazil,Sweden,90
+Round of 32,77,1I,3H,France,Cape Verde,I,H,3.271126569674667,0.5786063651194377,7,1,0,0,7,1,False,False,0.6,,France,Cape Verde,90
+Round of 32,78,2E,2I,Ivory Coast,Norway,E,I,1.0740382230353438,1.8435227885098253,2,1,0,0,2,1,False,False,0.42365333200848543,,Ivory Coast,Norway,90
+Round of 32,79,1A,3E,Mexico,Germany,A,E,1.1272721954881937,1.3168327338541919,2,1,0,0,2,1,False,False,0.48105302296663527,,Mexico,Germany,90
+Round of 32,80,1L,3K,England,Uzbekistan,L,K,1.9052480737892679,0.7899124912047706,0,2,0,0,0,2,False,False,0.6,,Uzbekistan,England,90
+Round of 32,81,1D,3B,United States,Bosnia and Herzegovina,D,B,2.249187353361928,0.7617303541607181,2,0,0,0,2,0,False,False,0.6,,United States,Bosnia and Herzegovina,90
+Round of 32,82,1G,3A,Belgium,Czech Republic,G,A,2.2076397549087368,0.8550777022366762,2,0,0,0,2,0,False,False,0.6,,Belgium,Czech Republic,90
+Round of 32,83,2K,2L,Portugal,Croatia,K,L,1.5772512540952142,1.1752629814917785,4,0,0,0,4,0,False,False,0.540112438449432,,Portugal,Croatia,90
+Round of 32,84,1H,2J,Uruguay,Algeria,H,J,1.2981341911390942,0.8409409306817464,2,0,0,0,2,0,False,False,0.5455923305792145,,Uruguay,Algeria,90
+Round of 32,85,1B,3J,Switzerland,Austria,B,J,1.4976171029809051,1.2437910864819748,3,0,0,0,3,0,False,False,0.5253608195529894,,Switzerland,Austria,90
+Round of 32,86,1J,2H,Argentina,Spain,J,H,1.3296670773188233,1.3300337443862154,1,1,0,0,1,1,True,True,0.49996333329332654,Spain,Spain,Argentina,PEN
+Round of 32,87,1K,3I,Colombia,Senegal,K,I,2.1528358290640828,0.8040135112660123,0,1,0,0,0,1,False,False,0.6,,Senegal,Colombia,90
+Round of 32,88,2D,2G,Australia,Iran,D,G,1.2276041631049637,1.2142874295852066,2,2,0,1,2,3,True,False,0.5013316702032804,,Iran,Australia,ET

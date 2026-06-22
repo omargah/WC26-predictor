@@ -1,0 +1,38 @@
+# Entornos
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Sistema
+.DS_Store
+.Trash/
+
+# Datos crudos y temporales
+data/raw/
+data/scenarios/
+data/predictions/formatted/
+data/predictions/mc_original_v2_runs/
+
+# Archivos pesados o temporales
+*.zip
+*.log
+
+# Notebooks cache
+.jupyter/
+.virtual_documents/
+
+# Outputs experimentales o pesados
+data/predictions/backups/
+data/predictions/run_100k/
+reports/backups/
+reports/run_100k/
+data/predictions/phase05_v2_fast_mc_*
+data/predictions/phase05_v2_mc_*
+reports/phase05_v2_fast_mc_*
+reports/phase05_v2_mc_*
+reports/worldcup_state_update_202*.json
+data/external/*.pdf
+data/external/*text_dump*

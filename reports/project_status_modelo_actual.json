@@ -1,0 +1,595 @@
+{
+  "generated_at": "2026-06-22T11:55:04",
+  "project_root": "/Users/omargah/Documents/Workspace/mundial-2026-predictor",
+  "phase_status": [
+    {
+      "phase": "Fase 1 — Datos",
+      "status": "TERMINADA",
+      "objective": "Construir dataset limpio histórico + fixture Mundial 2026."
+    },
+    {
+      "phase": "Fase 2 — Features",
+      "status": "TERMINADA",
+      "objective": "Generar variables temporales sin leakage."
+    },
+    {
+      "phase": "Fase 3 — Modelo de goles",
+      "status": "TERMINADA",
+      "objective": "Entrenar Poisson/Dixon-Coles y validar 1X2/goles."
+    },
+    {
+      "phase": "Fase 4 — Predictor de partidos",
+      "status": "TERMINADA",
+      "objective": "Calcular lambdas, 1X2, marcadores, over/BTTS para partidos."
+    },
+    {
+      "phase": "Fase 5 — Simulación torneo",
+      "status": "TERMINADA",
+      "objective": "Simular grupos, mejores terceros, Annexe C y KO."
+    },
+    {
+      "phase": "Fase 5B — Monte Carlo técnico",
+      "status": "TERMINADA",
+      "objective": "Estimar probabilidades de campeón y rondas con checkpoint."
+    },
+    {
+      "phase": "Fase 6 — Consolidación final",
+      "status": "EN PROCESO",
+      "objective": "Documentar, limpiar, empaquetar y dejar repo listo para portafolio."
+    }
+  ],
+  "inventory": [
+    {
+      "label": "matches_clean",
+      "path": "/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/processed/matches_clean.parquet",
+      "exists": true,
+      "status": "OK",
+      "description": "Dataset histórico limpio de partidos internacionales."
+    },
+    {
+      "label": "worldcup_fixture_clean",
+      "path": "/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/processed/worldcup_2026_fixture_clean.csv",
+      "exists": true,
+      "status": "OK",
+      "description": "Fixture limpio del Mundial 2026."
+    },
+    {
+      "label": "modeling_dataset_all",
+      "path": "/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/features/modeling_dataset_all.parquet",
+      "exists": true,
+      "status": "OK",
+      "description": "Dataset de modelado con partidos jugados y pendientes."
+    },
+    {
+      "label": "modeling_dataset_train",
+      "path": "/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/features/modeling_dataset_train.parquet",
+      "exists": true,
+      "status": "OK",
+      "description": "Dataset de entrenamiento sin fixtures futuros."
+    },
+    {
+      "label": "modeling_dataset_pending",
+      "path": "/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/features/modeling_dataset_pending.parquet",
+      "exists": true,
+      "status": "OK",
+      "description": "Dataset de partidos pendientes para predicción."
+    },
+    {
+      "label": "poisson_dc_base",
+      "path": "/Users/omargah/Documents/Workspace/mundial-2026-predictor/models/poisson_dc_base.joblib",
+      "exists": true,
+      "status": "OK",
+      "description": "Modelo Poisson/Dixon-Coles entrenado."
+    },
+    {
+      "label": "phase03_metrics",
+      "path": "/Users/omargah/Documents/Workspace/mundial-2026-predictor/reports/phase03_metrics.json",
+      "exists": true,
+      "status": "OK",
+      "description": "Métricas de validación del modelo de goles."
+    },
+    {
+      "label": "phase03_pending_predictions",
+      "path": "/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/phase03_pending_predictions.csv",
+      "exists": true,
+      "status": "OK",
+      "description": "Predicciones de partidos pendientes."
+    },
+    {
+      "label": "group_matches_fixed",
+      "path": "/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/phase05_v2_group_matches_once_fixed.csv",
+      "exists": true,
+      "status": "OK",
+      "description": "Partidos de grupo simulados con resultados reales fijos."
+    },
+    {
+      "label": "round_of_32_fixed",
+      "path": "/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/phase05_v2_round_of_32_fixed.csv",
+      "exists": true,
+      "status": "OK",
+      "description": "Cruces de Round of 32 del escenario fixed."
+    },
+    {
+      "label": "full_tournament_results_fixed",
+      "path": "/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/phase05_v2_full_tournament_results_fixed.csv",
+      "exists": true,
+      "status": "OK",
+      "description": "Una simulación completa del torneo fixed."
+    },
+    {
+      "label": "mc_original_fixed_results",
+      "path": "/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/mc_original_v2_runs/fixed_original_seed42/match_results.csv",
+      "exists": true,
+      "status": "OK",
+      "description": "Resultados KO del Monte Carlo original/técnico fixed."
+    },
+    {
+      "label": "mc_original_fixed_champions",
+      "path": "/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/mc_original_v2_runs/fixed_original_seed42/champion_probabilities.csv",
+      "exists": true,
+      "status": "OK",
+      "description": "Probabilidades de campeón del Monte Carlo original/técnico fixed."
+    },
+    {
+      "label": "mc_original_fixed_rounds",
+      "path": "/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/mc_original_v2_runs/fixed_original_seed42/round_probabilities.csv",
+      "exists": true,
+      "status": "OK",
+      "description": "Probabilidades de avance por ronda del Monte Carlo original/técnico fixed."
+    },
+    {
+      "label": "mc_original_fixed_metadata",
+      "path": "/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/mc_original_v2_runs/fixed_original_seed42/metadata.json",
+      "exists": true,
+      "status": "OK",
+      "description": "Metadata de corrida Monte Carlo original/técnico fixed."
+    }
+  ],
+  "phase03_metrics": {
+    "n_validation": 3170,
+    "mae_goles_local": 1.0209273089969804,
+    "mae_goles_visitante": 0.8494612569069722,
+    "mae_total": 1.8703885659039525,
+    "rmse_goles_local": 1.3504281583991347,
+    "rmse_goles_visitante": 1.1231039057601024,
+    "accuracy_1x2": 0.6091482649842271,
+    "log_loss_1x2": 0.8591363305861949,
+    "lambda_local_promedio": 1.628923649523608,
+    "lambda_visitante_promedio": 1.1148662050120495,
+    "goles_local_promedio_real": 1.6425867507886436,
+    "goles_visitante_promedio_real": 1.1425867507886436
+  },
+  "pending_summary": {
+    "n_pending_predictions": 32,
+    "columns": [
+      "match_id",
+      "fecha",
+      "equipo_local",
+      "equipo_visitante",
+      "goles_local",
+      "goles_visitante",
+      "resultado_1x2",
+      "over_2_5",
+      "btts",
+      "torneo",
+      "ciudad",
+      "pais_sede",
+      "neutral",
+      "peso_competicion",
+      "source_id",
+      "is_played",
+      "elo_local_pre",
+      "elo_visitante_pre",
+      "diff_elo_pre",
+      "elo_prob_local_pre",
+      "last_match_date_pre_L",
+      "matches_played_prior_L",
+      "unbeaten_streak_prior_L",
+      "win_streak_prior_L",
+      "scoring_streak_prior_L",
+      "goals_for_avg_5_L",
+      "goals_against_avg_5_L",
+      "goal_diff_avg_5_L",
+      "points_avg_5_L",
+      "win_avg_5_L",
+      "draw_avg_5_L",
+      "loss_avg_5_L",
+      "clean_sheet_avg_5_L",
+      "failed_to_score_avg_5_L",
+      "btts_avg_5_L",
+      "over_2_5_avg_5_L",
+      "points_sum_5_L",
+      "weighted_points_avg_5_L",
+      "goals_for_avg_10_L",
+      "goals_against_avg_10_L",
+      "goal_diff_avg_10_L",
+      "points_avg_10_L",
+      "win_avg_10_L",
+      "draw_avg_10_L",
+      "loss_avg_10_L",
+      "clean_sheet_avg_10_L",
+      "failed_to_score_avg_10_L",
+      "btts_avg_10_L",
+      "over_2_5_avg_10_L",
+      "points_sum_10_L",
+      "weighted_points_avg_10_L",
+      "goals_for_avg_20_L",
+      "goals_against_avg_20_L",
+      "goal_diff_avg_20_L",
+      "points_avg_20_L",
+      "win_avg_20_L",
+      "draw_avg_20_L",
+      "loss_avg_20_L",
+      "clean_sheet_avg_20_L",
+      "failed_to_score_avg_20_L",
+      "btts_avg_20_L",
+      "over_2_5_avg_20_L",
+      "points_sum_20_L",
+      "weighted_points_avg_20_L",
+      "last_match_date_pre_V",
+      "matches_played_prior_V",
+      "unbeaten_streak_prior_V",
+      "win_streak_prior_V",
+      "scoring_streak_prior_V",
+      "goals_for_avg_5_V",
+      "goals_against_avg_5_V",
+      "goal_diff_avg_5_V",
+      "points_avg_5_V",
+      "win_avg_5_V",
+      "draw_avg_5_V",
+      "loss_avg_5_V",
+      "clean_sheet_avg_5_V",
+      "failed_to_score_avg_5_V",
+      "btts_avg_5_V",
+      "over_2_5_avg_5_V",
+      "points_sum_5_V",
+      "weighted_points_avg_5_V",
+      "goals_for_avg_10_V",
+      "goals_against_avg_10_V",
+      "goal_diff_avg_10_V",
+      "points_avg_10_V",
+      "win_avg_10_V",
+      "draw_avg_10_V",
+      "loss_avg_10_V",
+      "clean_sheet_avg_10_V",
+      "failed_to_score_avg_10_V",
+      "btts_avg_10_V",
+      "over_2_5_avg_10_V",
+      "points_sum_10_V",
+      "weighted_points_avg_10_V",
+      "goals_for_avg_20_V",
+      "goals_against_avg_20_V",
+      "goal_diff_avg_20_V",
+      "points_avg_20_V",
+      "win_avg_20_V",
+      "draw_avg_20_V",
+      "loss_avg_20_V",
+      "clean_sheet_avg_20_V",
+      "failed_to_score_avg_20_V",
+      "btts_avg_20_V",
+      "over_2_5_avg_20_V",
+      "points_sum_20_V",
+      "weighted_points_avg_20_V",
+      "days_since_last_match_pre_L",
+      "days_since_last_match_pre_V",
+      "h2h_matches",
+      "h2h_goals_home_avg",
+      "h2h_goals_away_avg",
+      "h2h_total_goals_avg",
+      "h2h_home_win_rate",
+      "h2h_weight_sum",
+      "diff_matches_played_prior",
+      "diff_unbeaten_streak_prior",
+      "diff_win_streak_prior",
+      "diff_scoring_streak_prior",
+      "diff_goals_for_avg_5",
+      "diff_goals_against_avg_5",
+      "diff_goal_diff_avg_5",
+      "diff_points_avg_5",
+      "diff_win_avg_5",
+      "diff_draw_avg_5",
+      "diff_loss_avg_5",
+      "diff_clean_sheet_avg_5",
+      "diff_failed_to_score_avg_5",
+      "diff_btts_avg_5",
+      "diff_over_2_5_avg_5",
+      "diff_points_sum_5",
+      "diff_weighted_points_avg_5",
+      "diff_goals_for_avg_10",
+      "diff_goals_against_avg_10",
+      "diff_goal_diff_avg_10",
+      "diff_points_avg_10",
+      "diff_win_avg_10",
+      "diff_draw_avg_10",
+      "diff_loss_avg_10",
+      "diff_clean_sheet_avg_10",
+      "diff_failed_to_score_avg_10",
+      "diff_btts_avg_10",
+      "diff_over_2_5_avg_10",
+      "diff_points_sum_10",
+      "diff_weighted_points_avg_10",
+      "diff_goals_for_avg_20",
+      "diff_goals_against_avg_20",
+      "diff_goal_diff_avg_20",
+      "diff_points_avg_20",
+      "diff_win_avg_20",
+      "diff_draw_avg_20",
+      "diff_loss_avg_20",
+      "diff_clean_sheet_avg_20",
+      "diff_failed_to_score_avg_20",
+      "diff_btts_avg_20",
+      "diff_over_2_5_avg_20",
+      "diff_points_sum_20",
+      "diff_weighted_points_avg_20",
+      "diff_days_since_last_match_pre",
+      "lambda_local",
+      "lambda_visitante",
+      "prob_local",
+      "prob_empate",
+      "prob_visitante",
+      "prob_btts_si",
+      "prob_btts_no",
+      "prob_over_0_5",
+      "prob_under_0_5",
+      "prob_over_1_5",
+      "prob_under_1_5",
+      "prob_over_2_5",
+      "prob_under_2_5",
+      "prob_over_3_5",
+      "prob_under_3_5",
+      "prob_over_4_5",
+      "prob_under_4_5",
+      "marcador_mas_probable",
+      "prob_marcador_mas_probable",
+      "top_10_marcadores",
+      "pred_resultado_1x2"
+    ],
+    "min_date": "2026-06-22",
+    "max_date": "2026-06-27"
+  },
+  "montecarlo_original_fixed": {
+    "top_champions": [
+      {
+        "team": "Spain",
+        "championships": 22,
+        "champion_probability": 0.22,
+        "n_simulations": 100
+      },
+      {
+        "team": "Argentina",
+        "championships": 11,
+        "champion_probability": 0.11,
+        "n_simulations": 100
+      },
+      {
+        "team": "Brazil",
+        "championships": 9,
+        "champion_probability": 0.09,
+        "n_simulations": 100
+      },
+      {
+        "team": "Norway",
+        "championships": 8,
+        "champion_probability": 0.08,
+        "n_simulations": 100
+      },
+      {
+        "team": "France",
+        "championships": 7,
+        "champion_probability": 0.07,
+        "n_simulations": 100
+      },
+      {
+        "team": "Colombia",
+        "championships": 6,
+        "champion_probability": 0.06,
+        "n_simulations": 100
+      },
+      {
+        "team": "Germany",
+        "championships": 5,
+        "champion_probability": 0.05,
+        "n_simulations": 100
+      },
+      {
+        "team": "Switzerland",
+        "championships": 5,
+        "champion_probability": 0.05,
+        "n_simulations": 100
+      },
+      {
+        "team": "Portugal",
+        "championships": 5,
+        "champion_probability": 0.05,
+        "n_simulations": 100
+      },
+      {
+        "team": "Belgium",
+        "championships": 4,
+        "champion_probability": 0.04,
+        "n_simulations": 100
+      },
+      {
+        "team": "England",
+        "championships": 4,
+        "champion_probability": 0.04,
+        "n_simulations": 100
+      },
+      {
+        "team": "United States",
+        "championships": 2,
+        "champion_probability": 0.02,
+        "n_simulations": 100
+      },
+      {
+        "team": "Japan",
+        "championships": 2,
+        "champion_probability": 0.02,
+        "n_simulations": 100
+      },
+      {
+        "team": "Morocco",
+        "championships": 2,
+        "champion_probability": 0.02,
+        "n_simulations": 100
+      },
+      {
+        "team": "Ecuador",
+        "championships": 2,
+        "champion_probability": 0.02,
+        "n_simulations": 100
+      },
+      {
+        "team": "Mexico",
+        "championships": 2,
+        "champion_probability": 0.02,
+        "n_simulations": 100
+      },
+      {
+        "team": "Netherlands",
+        "championships": 1,
+        "champion_probability": 0.01,
+        "n_simulations": 100
+      },
+      {
+        "team": "Ivory Coast",
+        "championships": 1,
+        "champion_probability": 0.01,
+        "n_simulations": 100
+      },
+      {
+        "team": "Paraguay",
+        "championships": 1,
+        "champion_probability": 0.01,
+        "n_simulations": 100
+      },
+      {
+        "team": "Uruguay",
+        "championships": 1,
+        "champion_probability": 0.01,
+        "n_simulations": 100
+      }
+    ],
+    "n_simulations": 100,
+    "key_teams_round_probabilities": [
+      {
+        "team": "Mexico",
+        "p_round_of_32": 1.0,
+        "p_round_of_16": 0.61,
+        "p_quarterfinal": 0.36,
+        "p_semifinal": 0.16,
+        "p_final": 0.07,
+        "p_champion": 0.02,
+        "n_simulations": 100
+      },
+      {
+        "team": "United States",
+        "p_round_of_32": 1.0,
+        "p_round_of_16": 0.83,
+        "p_quarterfinal": 0.23,
+        "p_semifinal": 0.07,
+        "p_final": 0.02,
+        "p_champion": 0.02,
+        "n_simulations": 100
+      },
+      {
+        "team": "Canada",
+        "p_round_of_32": 1.0,
+        "p_round_of_16": 0.46,
+        "p_quarterfinal": 0.12,
+        "p_semifinal": 0.07,
+        "p_final": 0.02,
+        "p_champion": 0.0,
+        "n_simulations": 100
+      },
+      {
+        "team": "Spain",
+        "p_round_of_32": 1.0,
+        "p_round_of_16": 0.84,
+        "p_quarterfinal": 0.6,
+        "p_semifinal": 0.44,
+        "p_final": 0.33,
+        "p_champion": 0.22,
+        "n_simulations": 100
+      },
+      {
+        "team": "Argentina",
+        "p_round_of_32": 1.0,
+        "p_round_of_16": 0.76,
+        "p_quarterfinal": 0.53,
+        "p_semifinal": 0.38,
+        "p_final": 0.18,
+        "p_champion": 0.11,
+        "n_simulations": 100
+      },
+      {
+        "team": "Brazil",
+        "p_round_of_32": 1.0,
+        "p_round_of_16": 0.65,
+        "p_quarterfinal": 0.43,
+        "p_semifinal": 0.28,
+        "p_final": 0.18,
+        "p_champion": 0.09,
+        "n_simulations": 100
+      },
+      {
+        "team": "France",
+        "p_round_of_32": 1.0,
+        "p_round_of_16": 0.49,
+        "p_quarterfinal": 0.35,
+        "p_semifinal": 0.15,
+        "p_final": 0.09,
+        "p_champion": 0.07,
+        "n_simulations": 100
+      },
+      {
+        "team": "Belgium",
+        "p_round_of_32": 1.0,
+        "p_round_of_16": 0.92,
+        "p_quarterfinal": 0.73,
+        "p_semifinal": 0.24,
+        "p_final": 0.12,
+        "p_champion": 0.04,
+        "n_simulations": 100
+      },
+      {
+        "team": "England",
+        "p_round_of_32": 1.0,
+        "p_round_of_16": 0.77,
+        "p_quarterfinal": 0.47,
+        "p_semifinal": 0.21,
+        "p_final": 0.07,
+        "p_champion": 0.04,
+        "n_simulations": 100
+      },
+      {
+        "team": "Colombia",
+        "p_round_of_32": 1.0,
+        "p_round_of_16": 0.92,
+        "p_quarterfinal": 0.66,
+        "p_semifinal": 0.28,
+        "p_final": 0.13,
+        "p_champion": 0.06,
+        "n_simulations": 100
+      }
+    ],
+    "metadata": {
+      "played_policy": "fixed",
+      "n_total_requested": 100,
+      "n_completed": 100,
+      "base_seed": 42,
+      "run_name": "fixed_original_seed42",
+      "method": "original_technical_v2_checkpoint_resume",
+      "quality_note": "Modelo original/técnico: recalcula features ronda por ronda y no usa cache fast de lambdas."
+    }
+  },
+  "final_recommendations": [
+    "No integrar córners/tarjetas en esta versión base hasta tener datos confiables.",
+    "Mantener Poisson/Dixon-Coles como núcleo oficial del modelo actual.",
+    "Usar Monte Carlo original/técnico como referencia principal.",
+    "Usar Fast Monte Carlo solo como exploración, no como resultado oficial.",
+    "Construir un README formal y un reporte técnico antes del commit final.",
+    "Crear un script final único para predicción de partidos individuales.",
+    "Crear un script final único para simulación de torneo."
+  ]
+}

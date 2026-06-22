@@ -1,0 +1,33 @@
+date,home_team,away_team,match,match_key,dropdown_label,lambda_home,lambda_away
+2026-06-22,Argentina,Austria,Argentina vs Austria,2026-06-22__argentina__vs__austria,2026-06-22 | Argentina vs Austria,2.08450504248844,0.7819871643378634
+2026-06-22,France,Iraq,France vs Iraq,2026-06-22__france__vs__iraq,2026-06-22 | France vs Iraq,3.0942849561356898,0.6802412981524875
+2026-06-22,Jordan,Algeria,Jordan vs Algeria,2026-06-22__jordan__vs__algeria,2026-06-22 | Jordan vs Algeria,0.9846531295349228,1.7880803694898555
+2026-06-22,Norway,Senegal,Norway vs Senegal,2026-06-22__norway__vs__senegal,2026-06-22 | Norway vs Senegal,1.9234089385484243,1.239513132880934
+2026-06-23,Colombia,DR Congo,Colombia vs DR Congo,2026-06-23__colombia__vs__dr congo,2026-06-23 | Colombia vs DR Congo,2.2892808359169035,0.6760001908237666
+2026-06-23,England,Ghana,England vs Ghana,2026-06-23__england__vs__ghana,2026-06-23 | England vs Ghana,2.617042567391778,0.6122109518548504
+2026-06-23,Panama,Croatia,Panama vs Croatia,2026-06-23__panama__vs__croatia,2026-06-23 | Panama vs Croatia,1.0217582264133471,2.169647731848704
+2026-06-23,Portugal,Uzbekistan,Portugal vs Uzbekistan,2026-06-23__portugal__vs__uzbekistan,2026-06-23 | Portugal vs Uzbekistan,2.0166991323734114,0.8001961782628568
+2026-06-24,Bosnia and Herzegovina,Qatar,Bosnia and Herzegovina vs Qatar,2026-06-24__bosnia and herzegovina__vs__qatar,2026-06-24 | Bosnia and Herzegovina vs Qatar,1.575174367067622,1.1030014042536316
+2026-06-24,Canada,Switzerland,Canada vs Switzerland,2026-06-24__canada__vs__switzerland,2026-06-24 | Canada vs Switzerland,1.3546411748463578,1.1071787319061173
+2026-06-24,Mexico,Czech Republic,Mexico vs Czech Republic,2026-06-24__mexico__vs__czech republic,2026-06-24 | Mexico vs Czech Republic,1.999232129222824,0.6259399783357186
+2026-06-24,Morocco,Haiti,Morocco vs Haiti,2026-06-24__morocco__vs__haiti,2026-06-24 | Morocco vs Haiti,2.5083796508985157,0.6338850583170585
+2026-06-24,Scotland,Brazil,Scotland vs Brazil,2026-06-24__scotland__vs__brazil,2026-06-24 | Scotland vs Brazil,0.7891056876453559,2.2493367773650825
+2026-06-24,South Africa,South Korea,South Africa vs South Korea,2026-06-24__south africa__vs__south korea,2026-06-24 | South Africa vs South Korea,0.7402999934630307,1.7825285986129322
+2026-06-25,Curaçao,Ivory Coast,Curaçao vs Ivory Coast,2026-06-25__curacao__vs__ivory coast,2026-06-25 | Curaçao vs Ivory Coast,0.6397830446621658,2.4186950820670483
+2026-06-25,Ecuador,Germany,Ecuador vs Germany,2026-06-25__ecuador__vs__germany,2026-06-25 | Ecuador vs Germany,0.9842098150963096,1.3331134764315171
+2026-06-25,Japan,Sweden,Japan vs Sweden,2026-06-25__japan__vs__sweden,2026-06-25 | Japan vs Sweden,2.0021805561506185,0.9471164209036986
+2026-06-25,Paraguay,Australia,Paraguay vs Australia,2026-06-25__paraguay__vs__australia,2026-06-25 | Paraguay vs Australia,1.098012820044442,1.1646684528293676
+2026-06-25,Tunisia,Netherlands,Tunisia vs Netherlands,2026-06-25__tunisia__vs__netherlands,2026-06-25 | Tunisia vs Netherlands,0.6099287712246096,2.745225888399995
+2026-06-25,United States,Turkey,United States vs Turkey,2026-06-25__united states__vs__turkey,2026-06-25 | United States vs Turkey,1.6652055178010032,1.2355230009338265
+2026-06-26,Cape Verde,Saudi Arabia,Cape Verde vs Saudi Arabia,2026-06-26__cape verde__vs__saudi arabia,2026-06-26 | Cape Verde vs Saudi Arabia,1.1162626535380908,1.289121874488163
+2026-06-26,Egypt,Iran,Egypt vs Iran,2026-06-26__egypt__vs__iran,2026-06-26 | Egypt vs Iran,1.0622778915850726,1.1837141346493023
+2026-06-26,New Zealand,Belgium,New Zealand vs Belgium,2026-06-26__new zealand__vs__belgium,2026-06-26 | New Zealand vs Belgium,0.7908004381106655,3.0208369804991713
+2026-06-26,Norway,France,Norway vs France,2026-06-26__norway__vs__france,2026-06-26 | Norway vs France,1.0839523845500012,2.253509248108941
+2026-06-26,Senegal,Iraq,Senegal vs Iraq,2026-06-26__senegal__vs__iraq,2026-06-26 | Senegal vs Iraq,1.8686548182449936,0.9275529568778828
+2026-06-26,Uruguay,Spain,Uruguay vs Spain,2026-06-26__uruguay__vs__spain,2026-06-26 | Uruguay vs Spain,0.7725015693489902,1.87400185576181
+2026-06-27,Algeria,Austria,Algeria vs Austria,2026-06-27__algeria__vs__austria,2026-06-27 | Algeria vs Austria,1.105968890892621,1.3922679560985427
+2026-06-27,Colombia,Portugal,Colombia vs Portugal,2026-06-27__colombia__vs__portugal,2026-06-27 | Colombia vs Portugal,1.604315733412367,1.4862502755058251
+2026-06-27,Croatia,Ghana,Croatia vs Ghana,2026-06-27__croatia__vs__ghana,2026-06-27 | Croatia vs Ghana,2.121162053928696,0.817749909779093
+2026-06-27,DR Congo,Uzbekistan,DR Congo vs Uzbekistan,2026-06-27__dr congo__vs__uzbekistan,2026-06-27 | DR Congo vs Uzbekistan,1.0862035441266211,1.198109775243595
+2026-06-27,Jordan,Argentina,Jordan vs Argentina,2026-06-27__jordan__vs__argentina,2026-06-27 | Jordan vs Argentina,0.5496091218913238,2.7500410931286545
+2026-06-27,Panama,England,Panama vs England,2026-06-27__panama__vs__england,2026-06-27 | Panama vs England,0.6277347420344673,2.7680480914413716

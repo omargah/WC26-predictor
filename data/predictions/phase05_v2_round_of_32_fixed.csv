@@ -1,0 +1,17 @@
+round,match_number,round32_order,slot_a,slot_b,team_a,team_b,group_a,group_b,position_a,position_b,annexe_column,annexe_option,third_groups_key,same_group_violation,description
+Round of 32,73,1,2A,2B,South Korea,Switzerland,A,B,2,2,,,,False,Runner-up A v Runner-up B
+Round of 32,74,2,1E,3D,Germany,Paraguay,E,D,1,3,1E,116.0,BCDFIJKL,False,Winner E v Annexe C third-place team
+Round of 32,75,3,1F,2C,Netherlands,Brazil,F,C,1,2,,,,False,Winner F v Runner-up C
+Round of 32,76,4,1C,2F,Morocco,Japan,C,F,1,2,,,,False,Winner C v Runner-up F
+Round of 32,77,5,1I,3F,France,Sweden,I,F,1,3,1I,116.0,BCDFIJKL,False,Winner I v Annexe C third-place team
+Round of 32,78,6,2E,2I,Ivory Coast,Senegal,E,I,2,2,,,,False,Runner-up E v Runner-up I
+Round of 32,79,7,1A,3C,Mexico,Scotland,A,C,1,3,1A,116.0,BCDFIJKL,False,Winner A v Annexe C third-place team
+Round of 32,80,8,1L,3K,England,Portugal,L,K,1,3,1L,116.0,BCDFIJKL,False,Winner L v Annexe C third-place team
+Round of 32,81,9,1D,3B,United States,Bosnia and Herzegovina,D,B,1,3,1D,116.0,BCDFIJKL,False,Winner D v Annexe C third-place team
+Round of 32,82,10,1G,3I,Egypt,Norway,G,I,1,3,1G,116.0,BCDFIJKL,False,Winner G v Annexe C third-place team
+Round of 32,83,11,2K,2L,Uzbekistan,Croatia,K,L,2,2,,,,False,Runner-up K v Runner-up L
+Round of 32,84,12,1H,2J,Spain,Austria,H,J,1,2,,,,False,Winner H v Runner-up J
+Round of 32,85,13,1B,3J,Canada,Jordan,B,J,1,3,1B,116.0,BCDFIJKL,False,Winner B v Annexe C third-place team
+Round of 32,86,14,1J,2H,Argentina,Saudi Arabia,J,H,1,2,,,,False,Winner J v Runner-up H
+Round of 32,87,15,1K,3L,Colombia,Panama,K,L,1,3,1K,116.0,BCDFIJKL,False,Winner K v Annexe C third-place team
+Round of 32,88,16,2D,2G,Australia,Belgium,D,G,2,2,,,,False,Runner-up D v Runner-up G
