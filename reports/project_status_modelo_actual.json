@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-22T11:55:04",
+  "generated_at": "2026-06-23T10:03:25",
   "project_root": "/Users/omargah/Documents/Workspace/mundial-2026-predictor",
   "phase_status": [
     {
@@ -160,7 +160,7 @@
     "goles_visitante_promedio_real": 1.1425867507886436
   },
   "pending_summary": {
-    "n_pending_predictions": 32,
+    "n_pending_predictions": 28,
     "columns": [
       "match_id",
       "fecha",
@@ -344,7 +344,7 @@
       "top_10_marcadores",
       "pred_resultado_1x2"
     ],
-    "min_date": "2026-06-22",
+    "min_date": "2026-06-23",
     "max_date": "2026-06-27"
   },
   "montecarlo_original_fixed": {

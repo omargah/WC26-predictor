@@ -1,6 +1,6 @@
 # Estado actual del modelo Mundial 2026
 
-Generado: `2026-06-22T11:55:04`
+Generado: `2026-06-23T10:03:25`
 
 ## 1. Resumen ejecutivo
 
@@ -55,8 +55,8 @@ El proyecto ya cuenta con un pipeline funcional para datos históricos, features
 
 ## 5. Predicciones pendientes
 
-- Partidos pendientes predichos: `32`
-- Fecha mínima: `2026-06-22`
+- Partidos pendientes predichos: `28`
+- Fecha mínima: `2026-06-23`
 - Fecha máxima: `2026-06-27`
 
 ## 6. Monte Carlo original/técnico fixed

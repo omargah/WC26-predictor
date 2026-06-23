@@ -1,10 +1,10 @@
 {
   "played_policy": "fixed",
   "seed": 42,
-  "champion": "Colombia",
+  "champion": "Egypt",
   "runner_up": "Germany",
   "third_place": "Spain",
-  "fourth_place": "Portugal",
+  "fourth_place": "England",
   "final_match": 104,
   "final_decided_by": "90"
 }
