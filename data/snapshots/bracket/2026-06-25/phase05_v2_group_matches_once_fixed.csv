@@ -3,11 +3,11 @@ match_id,group,fecha,home,away,home_goals,away_goals,result_1x2,is_played_real_l
 86ad458e343b0967,A,2026-06-11,Mexico,South Africa,2,0,L,True,real_fixed_result,validation_pre_match,2.495109784855688,0.4617048587413248,2.0,0.0
 9d0c4ad9b5b8619f,B,2026-06-12,Canada,Bosnia and Herzegovina,1,1,E,True,real_fixed_result,validation_pre_match,2.255882552544506,0.584033649072493,1.0,1.0
 cb50098f5be0c371,D,2026-06-12,United States,Paraguay,4,1,L,True,real_fixed_result,validation_pre_match,1.152501203690316,1.3221167205278193,4.0,1.0
-4c48ec48a0ffee65,C,2026-06-13,Haiti,Scotland,0,1,V,True,real_fixed_result,validation_pre_match,0.8572987376176014,2.210702764430311,0.0,1.0
-7439e5b0a3bd216b,B,2026-06-13,Qatar,Switzerland,1,1,E,True,real_fixed_result,validation_pre_match,0.6120620216178568,2.7067212877594655,1.0,1.0
+4c48ec48a0ffee65,C,2026-06-13,Haiti,Scotland,0,1,V,True,real_fixed_result,validation_pre_match,0.8572987376176014,2.2107027644303114,0.0,1.0
+7439e5b0a3bd216b,B,2026-06-13,Qatar,Switzerland,1,1,E,True,real_fixed_result,validation_pre_match,0.6120620216178568,2.706721287759465,1.0,1.0
 d1ea50691693644b,C,2026-06-13,Brazil,Morocco,1,1,E,True,real_fixed_result,validation_pre_match,1.471610863284408,1.0944771017406332,1.0,1.0
 f15a4336f443cc1f,D,2026-06-13,Australia,Turkey,2,0,L,True,real_fixed_result,validation_pre_match,1.0916640337870611,1.635546039894448,2.0,0.0
-261e4bdeebab8d39,E,2026-06-14,Germany,Curaçao,7,1,L,True,real_fixed_result,validation_pre_match,3.2725087882221757,0.5986371535065439,7.0,1.0
+261e4bdeebab8d39,E,2026-06-14,Germany,Curaçao,7,1,L,True,real_fixed_result,validation_pre_match,3.272508788222176,0.5986371535065439,7.0,1.0
 3d75f7c8caa54885,E,2026-06-14,Ivory Coast,Ecuador,1,0,L,True,real_fixed_result,validation_pre_match,0.6475117563341863,1.562344698354564,1.0,0.0
 7500d0566efd1dc8,F,2026-06-14,Netherlands,Japan,2,2,E,True,real_fixed_result,validation_pre_match,1.1137209525812837,1.1121630969917196,2.0,2.0
 80114cf261777991,F,2026-06-14,Sweden,Tunisia,5,1,L,True,real_fixed_result,validation_pre_match,1.464764559746296,1.2383789658491535,5.0,1.0
@@ -53,21 +53,21 @@ a985a8dc88389197,L,2026-06-23,England,Ghana,0,0,E,True,real_fixed_result,,,,0.0,
 7460cd6511fca49e,B,2026-06-24,Bosnia and Herzegovina,Qatar,3,1,L,True,real_fixed_result,,,,3.0,1.0
 f5fcd4529ac85518,A,2026-06-24,Mexico,Czech Republic,3,0,L,True,real_fixed_result,,,,3.0,0.0
 fccedb15c3cffb95,C,2026-06-24,Morocco,Haiti,4,2,L,True,real_fixed_result,,,,4.0,2.0
-482e9663faea8107,E,2026-06-25,Curaçao,Ivory Coast,1,3,V,False,simulated_pending_match,pending_model_prediction,0.639783044662166,2.4186950820670456,,
-4e8d4fbe42a541b0,D,2026-06-25,United States,Turkey,1,2,V,False,simulated_pending_match,pending_model_prediction,1.6652055178010032,1.2355230009338256,,
-581ff7172eaa7094,D,2026-06-25,Paraguay,Australia,2,2,E,False,simulated_pending_match,pending_model_prediction,1.0980128200444417,1.1646684528293678,,
-909e8063944e67af,E,2026-06-25,Ecuador,Germany,1,3,V,False,simulated_pending_match,pending_model_prediction,0.984209815096309,1.3331134764315165,,
-bd2e5a14a87d3424,F,2026-06-25,Japan,Sweden,0,1,V,False,simulated_pending_match,pending_model_prediction,2.0021805561506194,0.9471164209036984,,
-c6b8ae9e26499afd,F,2026-06-25,Tunisia,Netherlands,2,8,V,False,simulated_pending_match,pending_model_prediction,0.6099287712246088,2.745225888399992,,
+482e9663faea8107,E,2026-06-25,Curaçao,Ivory Coast,1,3,V,False,simulated_pending_match,pending_model_prediction,0.6397830446621657,2.4186950820670456,,
+4e8d4fbe42a541b0,D,2026-06-25,United States,Turkey,1,2,V,False,simulated_pending_match,pending_model_prediction,1.6652055178010028,1.2355230009338258,,
+581ff7172eaa7094,D,2026-06-25,Paraguay,Australia,2,2,E,False,simulated_pending_match,pending_model_prediction,1.0980128200444426,1.1646684528293678,,
+909e8063944e67af,E,2026-06-25,Ecuador,Germany,1,3,V,False,simulated_pending_match,pending_model_prediction,0.9842098150963092,1.3331134764315162,,
+bd2e5a14a87d3424,F,2026-06-25,Japan,Sweden,0,1,V,False,simulated_pending_match,pending_model_prediction,2.0021805561506207,0.9471164209036984,,
+c6b8ae9e26499afd,F,2026-06-25,Tunisia,Netherlands,2,8,V,False,simulated_pending_match,pending_model_prediction,0.6099287712246091,2.745225888399995,,
 2a662739d52e9dd1,G,2026-06-26,Egypt,Iran,2,0,L,False,simulated_pending_match,pending_model_prediction,1.0622778915850728,1.1837141346493023,,
-37f47038b1b955dc,H,2026-06-26,Uruguay,Spain,1,4,V,False,simulated_pending_match,pending_model_prediction,0.7725015693489918,1.8740018557618103,,
-3f0e096f7c7e0b66,I,2026-06-26,Norway,France,0,2,V,False,simulated_pending_match,pending_model_prediction,1.103600098123407,2.1865423401214077,,
-5b4a42331bed7ea3,H,2026-06-26,Cape Verde,Saudi Arabia,1,1,E,False,simulated_pending_match,pending_model_prediction,1.1162626535380908,1.2891218744881623,,
-cad8b99802d5425b,I,2026-06-26,Senegal,Iraq,1,1,E,False,simulated_pending_match,pending_model_prediction,1.7784463898192362,1.0152881562584282,,
-db0b06e6871b49a0,G,2026-06-26,New Zealand,Belgium,2,4,V,False,simulated_pending_match,pending_model_prediction,0.7908004381106642,3.0208369804991713,,
-06ec6a9aebb5f15a,K,2026-06-27,Colombia,Portugal,2,1,L,False,simulated_pending_match,pending_model_prediction,1.5458897935116478,1.4376518337685418,,
+37f47038b1b955dc,H,2026-06-26,Uruguay,Spain,1,4,V,False,simulated_pending_match,pending_model_prediction,0.7725015693489921,1.874001855761811,,
+3f0e096f7c7e0b66,I,2026-06-26,Norway,France,0,2,V,False,simulated_pending_match,pending_model_prediction,1.103600098123407,2.1865423401214064,,
+5b4a42331bed7ea3,H,2026-06-26,Cape Verde,Saudi Arabia,1,1,E,False,simulated_pending_match,pending_model_prediction,1.1162626535380906,1.2891218744881627,,
+cad8b99802d5425b,I,2026-06-26,Senegal,Iraq,1,1,E,False,simulated_pending_match,pending_model_prediction,1.778446389819237,1.0152881562584286,,
+db0b06e6871b49a0,G,2026-06-26,New Zealand,Belgium,2,4,V,False,simulated_pending_match,pending_model_prediction,0.7908004381106637,3.0208369804991726,,
+06ec6a9aebb5f15a,K,2026-06-27,Colombia,Portugal,2,1,L,False,simulated_pending_match,pending_model_prediction,1.5458897935116478,1.437651833768541,,
 07a2ba327f82d28a,K,2026-06-27,DR Congo,Uzbekistan,2,1,L,False,simulated_pending_match,pending_model_prediction,1.1412956853886649,1.158553879917667,,
-1e9b421e3755422c,L,2026-06-27,Panama,England,0,5,V,False,simulated_pending_match,pending_model_prediction,0.688085661836138,2.7139951066283956,,
-7bc6f344a6dadb26,J,2026-06-27,Algeria,Austria,0,2,V,False,simulated_pending_match,pending_model_prediction,1.1335568767893844,1.5182433107857811,,
-8372c41ecbac576c,J,2026-06-27,Jordan,Argentina,0,6,V,False,simulated_pending_match,pending_model_prediction,0.5317841848612334,2.82437762002329,,
-f7dc96fa5daaa4ad,L,2026-06-27,Croatia,Ghana,0,1,V,False,simulated_pending_match,pending_model_prediction,1.9333124767209,0.8085506310265875,,
+1e9b421e3755422c,L,2026-06-27,Panama,England,0,5,V,False,simulated_pending_match,pending_model_prediction,0.6880856618361377,2.7139951066283965,,
+7bc6f344a6dadb26,J,2026-06-27,Algeria,Austria,0,2,V,False,simulated_pending_match,pending_model_prediction,1.133556876789384,1.5182433107857816,,
+8372c41ecbac576c,J,2026-06-27,Jordan,Argentina,0,6,V,False,simulated_pending_match,pending_model_prediction,0.5317841848612334,2.8243776200232893,,
+f7dc96fa5daaa4ad,L,2026-06-27,Croatia,Ghana,0,1,V,False,simulated_pending_match,pending_model_prediction,1.9333124767209,0.8085506310265873,,

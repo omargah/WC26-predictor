@@ -1,6 +1,6 @@
 # Estado actual del modelo Mundial 2026
 
-Generado: `2026-06-25T11:26:50`
+Generado: `2026-06-25T19:34:30`
 
 ## 1. Resumen ejecutivo
 
@@ -15,28 +15,28 @@ El proyecto ya cuenta con un pipeline funcional para datos históricos, features
 | Fase 3 — Modelo de goles | TERMINADA | Entrenar Poisson/Dixon-Coles y validar 1X2/goles. |
 | Fase 4 — Predictor de partidos | TERMINADA | Calcular lambdas, 1X2, marcadores, over/BTTS para partidos. |
 | Fase 5 — Simulación torneo | TERMINADA | Simular grupos, mejores terceros, Annexe C y KO. |
-| Fase 5B — Monte Carlo técnico | TERMINADA | Estimar probabilidades de campeón y rondas con checkpoint. |
+| Fase 5B — Monte Carlo técnico | INCOMPLETA | Estimar probabilidades de campeón y rondas con checkpoint. |
 | Fase 6 — Consolidación final | EN PROCESO | Documentar, limpiar, empaquetar y dejar repo listo para portafolio. |
 
 ## 3. Inventario de archivos clave
 
 | Archivo | Estado | Descripción |
 |---|---:|---|
-| `/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/processed/matches_clean.parquet` | OK | Dataset histórico limpio de partidos internacionales. |
-| `/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/processed/worldcup_2026_fixture_clean.csv` | OK | Fixture limpio del Mundial 2026. |
-| `/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/features/modeling_dataset_all.parquet` | OK | Dataset de modelado con partidos jugados y pendientes. |
-| `/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/features/modeling_dataset_train.parquet` | OK | Dataset de entrenamiento sin fixtures futuros. |
-| `/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/features/modeling_dataset_pending.parquet` | OK | Dataset de partidos pendientes para predicción. |
-| `/Users/omargah/Documents/Workspace/mundial-2026-predictor/models/poisson_dc_base.joblib` | OK | Modelo Poisson/Dixon-Coles entrenado. |
-| `/Users/omargah/Documents/Workspace/mundial-2026-predictor/reports/phase03_metrics.json` | OK | Métricas de validación del modelo de goles. |
-| `/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/phase03_pending_predictions.csv` | OK | Predicciones de partidos pendientes. |
-| `/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/phase05_v2_group_matches_once_fixed.csv` | OK | Partidos de grupo simulados con resultados reales fijos. |
-| `/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/phase05_v2_round_of_32_fixed.csv` | OK | Cruces de Round of 32 del escenario fixed. |
-| `/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/phase05_v2_full_tournament_results_fixed.csv` | OK | Una simulación completa del torneo fixed. |
-| `/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/mc_original_v2_runs/fixed_original_seed42/match_results.csv` | OK | Resultados KO del Monte Carlo original/técnico fixed. |
-| `/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/mc_original_v2_runs/fixed_original_seed42/champion_probabilities.csv` | OK | Probabilidades de campeón del Monte Carlo original/técnico fixed. |
-| `/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/mc_original_v2_runs/fixed_original_seed42/round_probabilities.csv` | OK | Probabilidades de avance por ronda del Monte Carlo original/técnico fixed. |
-| `/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/mc_original_v2_runs/fixed_original_seed42/metadata.json` | OK | Metadata de corrida Monte Carlo original/técnico fixed. |
+| `/home/runner/work/WC26-predictor/WC26-predictor/data/processed/matches_clean.parquet` | OK | Dataset histórico limpio de partidos internacionales. |
+| `/home/runner/work/WC26-predictor/WC26-predictor/data/processed/worldcup_2026_fixture_clean.csv` | OK | Fixture limpio del Mundial 2026. |
+| `/home/runner/work/WC26-predictor/WC26-predictor/data/features/modeling_dataset_all.parquet` | OK | Dataset de modelado con partidos jugados y pendientes. |
+| `/home/runner/work/WC26-predictor/WC26-predictor/data/features/modeling_dataset_train.parquet` | OK | Dataset de entrenamiento sin fixtures futuros. |
+| `/home/runner/work/WC26-predictor/WC26-predictor/data/features/modeling_dataset_pending.parquet` | OK | Dataset de partidos pendientes para predicción. |
+| `/home/runner/work/WC26-predictor/WC26-predictor/models/poisson_dc_base.joblib` | OK | Modelo Poisson/Dixon-Coles entrenado. |
+| `/home/runner/work/WC26-predictor/WC26-predictor/reports/phase03_metrics.json` | OK | Métricas de validación del modelo de goles. |
+| `/home/runner/work/WC26-predictor/WC26-predictor/data/predictions/phase03_pending_predictions.csv` | OK | Predicciones de partidos pendientes. |
+| `/home/runner/work/WC26-predictor/WC26-predictor/data/predictions/phase05_v2_group_matches_once_fixed.csv` | OK | Partidos de grupo simulados con resultados reales fijos. |
+| `/home/runner/work/WC26-predictor/WC26-predictor/data/predictions/phase05_v2_round_of_32_fixed.csv` | OK | Cruces de Round of 32 del escenario fixed. |
+| `/home/runner/work/WC26-predictor/WC26-predictor/data/predictions/phase05_v2_full_tournament_results_fixed.csv` | OK | Una simulación completa del torneo fixed. |
+| `/home/runner/work/WC26-predictor/WC26-predictor/data/predictions/mc_original_v2_runs/fixed_original_seed42/match_results.csv` | FALTA | Resultados KO del Monte Carlo original/técnico fixed. |
+| `/home/runner/work/WC26-predictor/WC26-predictor/data/predictions/mc_original_v2_runs/fixed_original_seed42/champion_probabilities.csv` | FALTA | Probabilidades de campeón del Monte Carlo original/técnico fixed. |
+| `/home/runner/work/WC26-predictor/WC26-predictor/data/predictions/mc_original_v2_runs/fixed_original_seed42/round_probabilities.csv` | FALTA | Probabilidades de avance por ronda del Monte Carlo original/técnico fixed. |
+| `/home/runner/work/WC26-predictor/WC26-predictor/data/predictions/mc_original_v2_runs/fixed_original_seed42/metadata.json` | FALTA | Metadata de corrida Monte Carlo original/técnico fixed. |
 
 ## 4. Métricas del modelo de goles
 
@@ -61,47 +61,6 @@ El proyecto ya cuenta con un pipeline funcional para datos históricos, features
 
 ## 6. Monte Carlo original/técnico fixed
 
-- Simulaciones completadas: `100`
-
-### Top campeones
-
-| Equipo | Campeonatos | Probabilidad |
-|---|---:|---:|
-| Spain | 22 | 22.00% |
-| Argentina | 11 | 11.00% |
-| Brazil | 9 | 9.00% |
-| Norway | 8 | 8.00% |
-| France | 7 | 7.00% |
-| Colombia | 6 | 6.00% |
-| Germany | 5 | 5.00% |
-| Switzerland | 5 | 5.00% |
-| Portugal | 5 | 5.00% |
-| Belgium | 4 | 4.00% |
-| England | 4 | 4.00% |
-| United States | 2 | 2.00% |
-| Japan | 2 | 2.00% |
-| Morocco | 2 | 2.00% |
-| Ecuador | 2 | 2.00% |
-| Mexico | 2 | 2.00% |
-| Netherlands | 1 | 1.00% |
-| Ivory Coast | 1 | 1.00% |
-| Paraguay | 1 | 1.00% |
-| Uruguay | 1 | 1.00% |
-
-### Equipos clave
-
-| Equipo | R16 | QF | SF | Final | Campeón |
-|---|---:|---:|---:|---:|---:|
-| Mexico | 61.00% | 36.00% | 16.00% | 7.00% | 2.00% |
-| United States | 83.00% | 23.00% | 7.00% | 2.00% | 2.00% |
-| Canada | 46.00% | 12.00% | 7.00% | 2.00% | 0.00% |
-| Spain | 84.00% | 60.00% | 44.00% | 33.00% | 22.00% |
-| Argentina | 76.00% | 53.00% | 38.00% | 18.00% | 11.00% |
-| Brazil | 65.00% | 43.00% | 28.00% | 18.00% | 9.00% |
-| France | 49.00% | 35.00% | 15.00% | 9.00% | 7.00% |
-| Belgium | 92.00% | 73.00% | 24.00% | 12.00% | 4.00% |
-| England | 77.00% | 47.00% | 21.00% | 7.00% | 4.00% |
-| Colombia | 92.00% | 66.00% | 28.00% | 13.00% | 6.00% |
 
 ## 7. Recomendaciones de cierre
 

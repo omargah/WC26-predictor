@@ -1,6 +1,6 @@
 {
-  "started_at": "2026-06-25T11:24:42",
-  "finished_at": "2026-06-25T11:25:55",
+  "started_at": "2026-06-25T19:27:43",
+  "finished_at": "2026-06-25T19:31:27",
   "scope": "full",
   "retrain": false,
   "seed": 42,
@@ -10,85 +10,85 @@
     {
       "name": "Revisar frescura de datos",
       "cmd": [
-        "/Users/omargah/Documents/Workspace/mundial-2026-predictor/.venv/bin/python",
-        "/Users/omargah/Documents/Workspace/mundial-2026-predictor/scripts/check_data_freshness.py"
+        "/opt/hostedtoolcache/Python/3.12.13/x64/bin/python",
+        "/home/runner/work/WC26-predictor/WC26-predictor/scripts/check_data_freshness.py"
       ],
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 2.0956308841705322
+      "elapsed_seconds": 1.961958408355713
     },
     {
       "name": "Construir dataset limpio",
       "cmd": [
-        "/Users/omargah/Documents/Workspace/mundial-2026-predictor/.venv/bin/python",
-        "/Users/omargah/Documents/Workspace/mundial-2026-predictor/scripts/build_clean_dataset.py"
+        "/opt/hostedtoolcache/Python/3.12.13/x64/bin/python",
+        "/home/runner/work/WC26-predictor/WC26-predictor/scripts/build_clean_dataset.py"
       ],
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 2.105462074279785
+      "elapsed_seconds": 2.1998209953308105
     },
     {
       "name": "Construir features",
       "cmd": [
-        "/Users/omargah/Documents/Workspace/mundial-2026-predictor/.venv/bin/python",
-        "/Users/omargah/Documents/Workspace/mundial-2026-predictor/scripts/build_features.py"
+        "/opt/hostedtoolcache/Python/3.12.13/x64/bin/python",
+        "/home/runner/work/WC26-predictor/WC26-predictor/scripts/build_features.py"
       ],
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 10.62917709350586
+      "elapsed_seconds": 33.61870837211609
     },
     {
       "name": "Predecir partidos pendientes",
       "cmd": [
-        "/Users/omargah/Documents/Workspace/mundial-2026-predictor/.venv/bin/python",
-        "/Users/omargah/Documents/Workspace/mundial-2026-predictor/scripts/predict_pending_phase03.py"
+        "/opt/hostedtoolcache/Python/3.12.13/x64/bin/python",
+        "/home/runner/work/WC26-predictor/WC26-predictor/scripts/predict_pending_phase03.py"
       ],
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 1.3387131690979004
+      "elapsed_seconds": 2.468815326690674
     },
     {
       "name": "Construir referencias web/Colab",
       "cmd": [
-        "/Users/omargah/Documents/Workspace/mundial-2026-predictor/.venv/bin/python",
-        "/Users/omargah/Documents/Workspace/mundial-2026-predictor/scripts/build_web_reference_options.py"
+        "/opt/hostedtoolcache/Python/3.12.13/x64/bin/python",
+        "/home/runner/work/WC26-predictor/WC26-predictor/scripts/build_web_reference_options.py"
       ],
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 0.2821991443634033
+      "elapsed_seconds": 0.4216797351837158
     },
     {
       "name": "Construir reporte maestro",
       "cmd": [
-        "/Users/omargah/Documents/Workspace/mundial-2026-predictor/.venv/bin/python",
-        "/Users/omargah/Documents/Workspace/mundial-2026-predictor/scripts/build_project_status_report.py"
+        "/opt/hostedtoolcache/Python/3.12.13/x64/bin/python",
+        "/home/runner/work/WC26-predictor/WC26-predictor/scripts/build_project_status_report.py"
       ],
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 0.2784409523010254
+      "elapsed_seconds": 0.4131145477294922
     },
     {
       "name": "Listar partidos de grupo V2",
       "cmd": [
-        "/Users/omargah/Documents/Workspace/mundial-2026-predictor/.venv/bin/python",
-        "/Users/omargah/Documents/Workspace/mundial-2026-predictor/scripts/list_group_matches_v2.py"
+        "/opt/hostedtoolcache/Python/3.12.13/x64/bin/python",
+        "/home/runner/work/WC26-predictor/WC26-predictor/scripts/list_group_matches_v2.py"
       ],
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 0.3973660469055176
+      "elapsed_seconds": 0.5946958065032959
     },
     {
       "name": "Simular grupos fixed V2",
       "cmd": [
-        "/Users/omargah/Documents/Workspace/mundial-2026-predictor/.venv/bin/python",
-        "/Users/omargah/Documents/Workspace/mundial-2026-predictor/scripts/simulate_group_matches_v2.py",
+        "/opt/hostedtoolcache/Python/3.12.13/x64/bin/python",
+        "/home/runner/work/WC26-predictor/WC26-predictor/scripts/simulate_group_matches_v2.py",
         "--played-policy",
         "fixed",
         "--seed",
@@ -97,39 +97,39 @@
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 1.127074956893921
+      "elapsed_seconds": 1.5154476165771484
     },
     {
       "name": "Construir tablas de grupo V2",
       "cmd": [
-        "/Users/omargah/Documents/Workspace/mundial-2026-predictor/.venv/bin/python",
-        "/Users/omargah/Documents/Workspace/mundial-2026-predictor/scripts/build_group_tables_v2.py",
+        "/opt/hostedtoolcache/Python/3.12.13/x64/bin/python",
+        "/home/runner/work/WC26-predictor/WC26-predictor/scripts/build_group_tables_v2.py",
         "--played-policy",
         "fixed"
       ],
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 0.3726367950439453
+      "elapsed_seconds": 0.7608506679534912
     },
     {
       "name": "Construir Round of 32 V2",
       "cmd": [
-        "/Users/omargah/Documents/Workspace/mundial-2026-predictor/.venv/bin/python",
-        "/Users/omargah/Documents/Workspace/mundial-2026-predictor/scripts/build_round_of_32_v2.py",
+        "/opt/hostedtoolcache/Python/3.12.13/x64/bin/python",
+        "/home/runner/work/WC26-predictor/WC26-predictor/scripts/build_round_of_32_v2.py",
         "--played-policy",
         "fixed"
       ],
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 0.2877020835876465
+      "elapsed_seconds": 0.4658212661743164
     },
     {
       "name": "Simular torneo una vez V2",
       "cmd": [
-        "/Users/omargah/Documents/Workspace/mundial-2026-predictor/.venv/bin/python",
-        "/Users/omargah/Documents/Workspace/mundial-2026-predictor/scripts/simulate_tournament_once_v2.py",
+        "/opt/hostedtoolcache/Python/3.12.13/x64/bin/python",
+        "/home/runner/work/WC26-predictor/WC26-predictor/scripts/simulate_tournament_once_v2.py",
         "--played-policy",
         "fixed",
         "--seed",
@@ -138,12 +138,12 @@
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 53.78396201133728
+      "elapsed_seconds": 180.38695287704468
     }
   ],
   "pending_predictions": {
     "exists": true,
-    "path": "/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/phase03_pending_predictions.csv",
+    "path": "/home/runner/work/WC26-predictor/WC26-predictor/data/predictions/phase03_pending_predictions.csv",
     "rows": 18,
     "columns": [
       "match_id",
@@ -339,7 +339,7 @@
   },
   "reference_matches": {
     "exists": true,
-    "path": "/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/reference/available_matches.csv",
+    "path": "/home/runner/work/WC26-predictor/WC26-predictor/data/reference/available_matches.csv",
     "rows": 18,
     "columns": [
       "date",

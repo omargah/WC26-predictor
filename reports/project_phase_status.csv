@@ -4,5 +4,5 @@ Fase 2 — Features,TERMINADA,Generar variables temporales sin leakage.
 Fase 3 — Modelo de goles,TERMINADA,Entrenar Poisson/Dixon-Coles y validar 1X2/goles.
 Fase 4 — Predictor de partidos,TERMINADA,"Calcular lambdas, 1X2, marcadores, over/BTTS para partidos."
 Fase 5 — Simulación torneo,TERMINADA,"Simular grupos, mejores terceros, Annexe C y KO."
-Fase 5B — Monte Carlo técnico,TERMINADA,Estimar probabilidades de campeón y rondas con checkpoint.
+Fase 5B — Monte Carlo técnico,INCOMPLETA,Estimar probabilidades de campeón y rondas con checkpoint.
 Fase 6 — Consolidación final,EN PROCESO,"Documentar, limpiar, empaquetar y dejar repo listo para portafolio."
