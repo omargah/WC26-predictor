@@ -1,6 +1,6 @@
 {
-  "started_at": "2026-06-23T10:03:08",
-  "finished_at": "2026-06-23T10:04:22",
+  "started_at": "2026-06-25T11:24:42",
+  "finished_at": "2026-06-25T11:25:55",
   "scope": "full",
   "retrain": false,
   "seed": 42,
@@ -16,7 +16,7 @@
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 1.6312780380249023
+      "elapsed_seconds": 2.0956308841705322
     },
     {
       "name": "Construir dataset limpio",
@@ -27,7 +27,7 @@
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 2.4448089599609375
+      "elapsed_seconds": 2.105462074279785
     },
     {
       "name": "Construir features",
@@ -38,7 +38,7 @@
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 10.558012247085571
+      "elapsed_seconds": 10.62917709350586
     },
     {
       "name": "Predecir partidos pendientes",
@@ -49,7 +49,7 @@
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 1.608867883682251
+      "elapsed_seconds": 1.3387131690979004
     },
     {
       "name": "Construir referencias web/Colab",
@@ -60,7 +60,7 @@
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 0.3295140266418457
+      "elapsed_seconds": 0.2821991443634033
     },
     {
       "name": "Construir reporte maestro",
@@ -71,7 +71,7 @@
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 0.2834959030151367
+      "elapsed_seconds": 0.2784409523010254
     },
     {
       "name": "Listar partidos de grupo V2",
@@ -82,7 +82,7 @@
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 0.4632859230041504
+      "elapsed_seconds": 0.3973660469055176
     },
     {
       "name": "Simular grupos fixed V2",
@@ -97,7 +97,7 @@
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 1.522730827331543
+      "elapsed_seconds": 1.127074956893921
     },
     {
       "name": "Construir tablas de grupo V2",
@@ -110,7 +110,7 @@
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 0.37676000595092773
+      "elapsed_seconds": 0.3726367950439453
     },
     {
       "name": "Construir Round of 32 V2",
@@ -123,7 +123,7 @@
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 0.2795441150665283
+      "elapsed_seconds": 0.2877020835876465
     },
     {
       "name": "Simular torneo una vez V2",
@@ -138,13 +138,13 @@
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 55.00766205787659
+      "elapsed_seconds": 53.78396201133728
     }
   ],
   "pending_predictions": {
     "exists": true,
     "path": "/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/predictions/phase03_pending_predictions.csv",
-    "rows": 28,
+    "rows": 18,
     "columns": [
       "match_id",
       "fecha",
@@ -329,11 +329,9 @@
       "pred_resultado_1x2"
     ],
     "date_col": "fecha",
-    "min_date": "2026-06-23",
+    "min_date": "2026-06-25",
     "max_date": "2026-06-27",
     "dates": [
-      "2026-06-23",
-      "2026-06-24",
       "2026-06-25",
       "2026-06-26",
       "2026-06-27"
@@ -342,7 +340,7 @@
   "reference_matches": {
     "exists": true,
     "path": "/Users/omargah/Documents/Workspace/mundial-2026-predictor/data/reference/available_matches.csv",
-    "rows": 28,
+    "rows": 18,
     "columns": [
       "date",
       "home_team",
@@ -354,8 +352,6 @@
       "lambda_away"
     ],
     "dates": [
-      "2026-06-23",
-      "2026-06-24",
       "2026-06-25",
       "2026-06-26",
       "2026-06-27"

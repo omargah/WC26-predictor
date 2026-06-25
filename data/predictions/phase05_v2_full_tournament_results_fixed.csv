@@ -1,33 +1,33 @@
 round,match_number,slot_a,slot_b,team_a,team_b,group_a,group_b,lambda_a_90,lambda_b_90,goals_a_90,goals_b_90,goals_a_et,goals_b_et,goals_a_total,goals_b_total,went_to_extra_time,went_to_penalties,p_penalty_a,penalty_winner,winner,loser,decided_by
-Round of 32,73,2A,2B,South Korea,Switzerland,A,B,1.2737765844869489,1.450259224613767,3,1,0,0,3,1,False,False,0.4823590613366899,,South Korea,Switzerland,90
-Round of 32,74,1E,3C,Germany,Scotland,E,C,2.0392497819946596,0.9771979885619335,2,1,0,0,2,1,False,False,0.6,,Germany,Scotland,90
-Round of 32,75,1F,2C,Netherlands,Morocco,F,C,1.389396348027526,1.2106805488463788,2,1,0,0,2,1,False,False,0.5178639730532688,,Netherlands,Morocco,90
-Round of 32,76,1C,2F,Brazil,Japan,C,F,1.3165468664708877,0.9972881950083837,2,0,0,0,2,0,False,False,0.5318825500657345,,Brazil,Japan,90
-Round of 32,77,1I,3F,France,Sweden,I,F,2.7861580801365773,0.8621479165379728,3,0,0,0,3,0,False,False,0.6,,France,Sweden,90
-Round of 32,78,2E,2I,Ivory Coast,Norway,E,I,1.19934861965183,1.7405043540359504,1,2,0,0,1,2,False,False,0.44609474409010647,,Norway,Ivory Coast,90
-Round of 32,79,1A,3E,Mexico,Ecuador,A,E,0.8220237993357209,1.0802523971795641,0,0,0,1,0,1,True,False,0.4742000746823581,,Ecuador,Mexico,ET
-Round of 32,80,1L,3I,England,Senegal,L,I,1.9232467923527454,0.9021615128508831,5,1,0,0,5,1,False,False,0.6,,England,Senegal,90
-Round of 32,81,1D,3B,United States,Qatar,D,B,2.807567656525338,0.7441513037333548,4,1,0,0,4,1,False,False,0.6,,United States,Qatar,90
-Round of 32,82,1G,3A,Belgium,Czech Republic,G,A,1.9863262149881837,0.8937682063527871,2,0,0,0,2,0,False,False,0.6,,Belgium,Czech Republic,90
-Round of 32,83,2K,2L,Portugal,Croatia,K,L,1.7324898402167102,1.1467355798310461,4,3,0,0,4,3,False,False,0.5583089196519494,,Portugal,Croatia,90
-Round of 32,84,1H,2J,Spain,Austria,H,J,2.2496707290431006,0.8695087084450451,3,0,0,0,3,0,False,False,0.6,,Spain,Austria,90
-Round of 32,85,1B,3G,Canada,Iran,B,G,1.3405267492173707,0.9640732255907893,4,1,0,0,4,1,False,False,0.5375743800062054,,Canada,Iran,90
-Round of 32,86,1J,2H,Argentina,Saudi Arabia,J,H,2.5642763830400357,0.5078240675516096,4,0,0,0,4,0,False,False,0.6,,Argentina,Saudi Arabia,90
-Round of 32,87,1K,3L,Colombia,Ghana,K,L,2.610557439187102,0.6827362037702362,0,0,0,0,0,0,True,True,0.6,Ghana,Ghana,Colombia,PEN
-Round of 32,88,2D,2G,Australia,Egypt,D,G,1.2773901684579267,1.0997622807798153,0,1,0,0,0,1,False,False,0.5177553199304303,,Egypt,Australia,90
-Round of 16,89,W73,W74,South Korea,Germany,A,E,1.1216096741175847,1.64644287486199,0,4,0,0,0,4,False,False,0.44770858785586515,,Germany,South Korea,90
-Round of 16,90,W75,W76,Netherlands,Brazil,F,C,1.140251671584636,1.6083028053927733,2,4,0,0,2,4,False,False,0.45333112488259997,,Brazil,Netherlands,90
-Round of 16,91,W77,W78,France,Norway,I,I,2.176505673851576,1.121356087107797,1,1,0,0,1,1,True,True,0.6,Norway,Norway,France,PEN
-Round of 16,92,W79,W80,Ecuador,England,E,L,1.055970917028246,1.2551388133273944,0,1,0,0,0,1,False,False,0.48009373777176884,,England,Ecuador,90
-Round of 16,93,W81,W82,United States,Belgium,D,G,1.1615100754596797,1.8014829823009118,0,5,0,0,0,5,False,False,0.43634991518330357,,Belgium,United States,90
-Round of 16,94,W83,W84,Portugal,Spain,K,H,0.9719577290765071,2.184113971365371,0,2,0,0,0,2,False,False,0.4,,Spain,Portugal,90
-Round of 16,95,W85,W86,Canada,Argentina,B,J,0.6651187354836836,1.7692289680999846,1,0,0,0,1,0,False,False,0.4,,Canada,Argentina,90
-Round of 16,96,W87,W88,Ghana,Egypt,L,G,0.7451706771251526,1.614872773921733,2,2,0,1,2,3,True,False,0.4138964063260756,,Egypt,Ghana,ET
-Quarterfinal,97,W89,W90,Germany,Brazil,E,C,1.2171955904467247,1.6731791696113445,2,2,1,0,3,2,True,False,0.4545276343875094,,Germany,Brazil,ET
-Quarterfinal,98,W91,W92,Norway,England,I,L,1.1998749272027514,1.7290173228526058,1,2,0,0,1,2,False,False,0.447282420093708,,England,Norway,90
-Quarterfinal,99,W93,W94,Belgium,Spain,G,H,0.9693519614106729,1.8269402158959234,3,3,0,0,3,3,True,True,0.41507235490201266,Spain,Spain,Belgium,PEN
-Quarterfinal,100,W95,W96,Canada,Egypt,B,G,1.4594661894649585,0.8655959798252032,0,0,0,1,0,1,True,False,0.5591093248992799,,Egypt,Canada,ET
-Semifinal,101,W97,W98,Germany,England,E,L,1.3122363190069806,1.509316027309306,3,1,0,0,3,1,False,False,0.4803022290404114,,Germany,England,90
-Semifinal,102,W99,W100,Spain,Egypt,H,G,2.127194040340219,0.6984622798770457,0,1,0,0,0,1,False,False,0.6,,Egypt,Spain,90
-Third Place,103,L101,L102,England,Spain,L,H,1.1768386919515508,1.638644905112442,1,2,0,0,1,2,False,False,0.45395024826650104,,Spain,England,90
-Final,104,W101,W102,Germany,Egypt,E,G,1.8796765885148998,0.9654455285395773,0,2,0,0,0,2,False,False,0.590417707588317,,Egypt,Germany,90
+Round of 32,73,2A,2B,South Africa,Canada,A,B,0.7793690714676844,1.6031928495273333,2,2,0,1,2,3,True,False,0.41835510472658394,,Canada,South Africa,ET
+Round of 32,74,1E,3D,Germany,Paraguay,E,D,1.8278784235397838,1.0127571636952082,2,2,1,0,3,2,True,False,0.580797607510731,,Germany,Paraguay,ET
+Round of 32,75,1F,2C,Netherlands,Morocco,F,C,1.5012611207259523,1.277497252590258,2,0,0,0,2,0,False,False,0.522361460215517,,Netherlands,Morocco,90
+Round of 32,76,1C,2F,Brazil,Sweden,C,F,2.4781873658983953,0.8548096193676356,2,2,0,0,2,2,True,True,0.6,Sweden,Sweden,Brazil,PEN
+Round of 32,77,1I,3F,France,Japan,I,F,1.6434969910981123,0.8875512910419998,4,2,0,0,4,2,False,False,0.5750238039426158,,France,Japan,90
+Round of 32,78,2E,2I,Ivory Coast,Norway,E,I,1.182081977462102,1.761323608461707,2,2,0,1,2,3,True,False,0.44233358352419366,,Norway,Ivory Coast,ET
+Round of 32,79,1A,3C,Mexico,Scotland,A,C,1.6019776086778605,0.8320474596460979,4,1,0,0,4,1,False,False,0.5763901868655235,,Mexico,Scotland,90
+Round of 32,80,1L,3K,England,DR Congo,L,K,2.156779938247152,0.6734764693174223,2,2,3,0,5,2,True,False,0.6,,England,DR Congo,ET
+Round of 32,81,1D,3B,United States,Bosnia and Herzegovina,D,B,2.3461829504009515,0.9051378752950029,3,4,0,0,3,4,False,False,0.6,,Bosnia and Herzegovina,United States,90
+Round of 32,82,1G,3A,Egypt,South Korea,G,A,1.1326829491562735,1.0884138988908738,0,0,0,0,0,0,True,True,0.5044267893552088,South Korea,South Korea,Egypt,PEN
+Round of 32,83,2K,2L,Portugal,Ghana,K,L,2.3386434680466226,0.7157392231576585,1,0,0,0,1,0,False,False,0.6,,Portugal,Ghana,90
+Round of 32,84,1H,2J,Spain,Austria,H,J,2.349140690930173,0.8946982381048821,1,1,0,0,1,1,True,True,0.6,Spain,Spain,Austria,PEN
+Round of 32,85,1B,3J,Switzerland,Algeria,B,J,1.8399932398356862,1.06571818496362,1,2,0,0,1,2,False,False,0.5768144792014961,,Algeria,Switzerland,90
+Round of 32,86,1J,2H,Argentina,Cape Verde,J,H,3.0254657091327455,0.44301119806453193,3,0,0,0,3,0,False,False,0.6,,Argentina,Cape Verde,90
+Round of 32,87,1K,3L,Colombia,Croatia,K,L,1.8953463358906744,0.9539727996790536,2,0,0,0,2,0,False,False,0.5930405948274322,,Colombia,Croatia,90
+Round of 32,88,2D,2G,Australia,Belgium,D,G,1.0288522465710872,1.7619434596298817,1,1,0,0,1,1,True,True,0.4272117071759437,Belgium,Belgium,Australia,PEN
+Round of 16,89,W73,W74,Canada,Germany,B,E,0.9421137323523499,1.8482533605076048,0,3,0,0,0,3,False,False,0.4103652038709953,,Germany,Canada,90
+Round of 16,90,W75,W76,Netherlands,Sweden,F,F,2.2662647000465013,1.0552392470900451,4,1,0,0,4,1,False,False,0.6,,Netherlands,Sweden,90
+Round of 16,91,W77,W78,France,Norway,I,I,2.2089677026075005,1.0171378027708782,1,1,0,0,1,1,True,True,0.6,Norway,Norway,France,PEN
+Round of 16,92,W79,W80,Mexico,England,A,L,1.0605827655161502,1.325681588516549,0,1,0,0,0,1,False,False,0.47351493040305037,,England,Mexico,90
+Round of 16,93,W81,W82,Bosnia and Herzegovina,South Korea,B,A,0.8601664722046863,1.8565824124334227,0,3,0,0,0,3,False,False,0.4016568321170175,,South Korea,Bosnia and Herzegovina,90
+Round of 16,94,W83,W84,Portugal,Spain,K,H,1.0312724978354362,1.9460627513324238,0,1,0,0,0,1,False,False,0.40952820279742447,,Spain,Portugal,90
+Round of 16,95,W85,W86,Algeria,Argentina,J,J,0.5968520881573762,2.2682209920429814,0,5,0,0,0,5,False,False,0.4,,Argentina,Algeria,90
+Round of 16,96,W87,W88,Colombia,Belgium,K,G,1.6444515400876387,1.1088004731289864,4,0,0,0,4,0,False,False,0.5533611229363958,,Colombia,Belgium,90
+Quarterfinal,97,W89,W90,Germany,Netherlands,E,F,1.4353288461498197,1.3991449689795021,2,3,0,0,2,3,False,False,0.5036183245522586,,Netherlands,Germany,90
+Quarterfinal,98,W91,W92,Norway,England,I,L,1.1331080296859115,1.696693794686619,2,2,0,1,2,3,True,False,0.4438788982245086,,England,Norway,ET
+Quarterfinal,99,W93,W94,South Korea,Spain,A,H,0.695400805668237,2.291159170292005,3,1,0,0,3,1,False,False,0.4,,South Korea,Spain,90
+Quarterfinal,100,W95,W96,Argentina,Colombia,J,K,1.3904548883292112,0.8716428440305882,0,3,0,0,0,3,False,False,0.5516958074561612,,Colombia,Argentina,90
+Semifinal,101,W97,W98,Netherlands,England,F,L,1.3271731265539526,1.4742363783314398,3,1,0,0,3,1,False,False,0.4852979141888436,,Netherlands,England,90
+Semifinal,102,W99,W100,South Korea,Colombia,A,K,0.8304608902281092,1.7683233017810118,0,1,0,0,0,1,False,False,0.4072984041863306,,Colombia,South Korea,90
+Third Place,103,L101,L102,England,South Korea,L,A,1.553099252685623,0.992328376423293,2,0,0,0,2,0,False,False,0.5558431416514873,,England,South Korea,90
+Final,104,W101,W102,Netherlands,Colombia,F,K,1.3313784688994483,1.5585411141476881,0,1,0,0,0,1,False,False,0.4772993522398655,,Colombia,Netherlands,90

@@ -1479,10 +1479,28 @@ pero no hacen que el modelo sea perfecto: solo estabilizan la estimación.
 with tabs[6]:
     st.header("Comparación del modelo contra resultados reales")
 
-    played = matches_all[matches_all["is_played_bool"]].copy()
+    # Lectura directa para evitar que la comparación se quede atrasada por caché
+    raw_compare = pd.read_csv(GROUP_MATCHES)
+
+    played = raw_compare[
+        raw_compare["is_played_real_life"].astype(str).str.lower().isin(["true", "1"])
+    ].copy()
+
+    played["date"] = played["fecha"].astype(str)
+    played["home_team"] = played["home"].astype(str)
+    played["away_team"] = played["away"].astype(str)
+    played["match"] = played["home_team"] + " vs " + played["away_team"]
+
+    played["current_home_goals"] = played["real_home_goals"].fillna(played["home_goals"])
+    played["current_away_goals"] = played["real_away_goals"].fillna(played["away_goals"])
+
+    played["lambda_home"] = pd.to_numeric(played["lambda_home"], errors="coerce")
+    played["lambda_away"] = pd.to_numeric(played["lambda_away"], errors="coerce")
+
+    played = played.dropna(subset=["lambda_home", "lambda_away"]).copy()
 
     if played.empty:
-        st.info("No hay partidos jugados detectados en el archivo actual.")
+        st.info("No hay partidos jugados con predicción pre-partido disponible.")
     else:
         dates = sorted(played["date"].astype(str).unique())
         d = st.selectbox("Fecha", dates, key="compare_date")

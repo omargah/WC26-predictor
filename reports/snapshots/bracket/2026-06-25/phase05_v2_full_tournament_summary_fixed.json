@@ -1,0 +1,10 @@
+{
+  "played_policy": "fixed",
+  "seed": 42,
+  "champion": "Colombia",
+  "runner_up": "Netherlands",
+  "third_place": "England",
+  "fourth_place": "South Korea",
+  "final_match": 104,
+  "final_decided_by": "90"
+}
