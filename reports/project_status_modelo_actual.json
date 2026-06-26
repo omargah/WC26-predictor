@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-26T01:43:50",
+  "generated_at": "2026-06-26T11:27:26",
   "project_root": "/home/runner/work/WC26-predictor/WC26-predictor",
   "phase_status": [
     {
@@ -160,7 +160,7 @@
     "goles_visitante_promedio_real": 1.1425867507886436
   },
   "pending_summary": {
-    "n_pending_predictions": 18,
+    "n_pending_predictions": 12,
     "columns": [
       "match_id",
       "fecha",
@@ -344,7 +344,7 @@
       "top_10_marcadores",
       "pred_resultado_1x2"
     ],
-    "min_date": "2026-06-25",
+    "min_date": "2026-06-26",
     "max_date": "2026-06-27"
   },
   "montecarlo_original_fixed": {
