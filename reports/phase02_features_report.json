@@ -1,5 +1,5 @@
 {
-    "created_at": "2026-06-26T19:21:01",
+    "created_at": "2026-06-27T01:29:47",
     "start_year": 2010,
     "input": "/home/runner/work/WC26-predictor/WC26-predictor/data/processed/matches_clean.parquet",
     "n_rows_all": 15888,

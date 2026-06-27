@@ -1,6 +1,6 @@
 {
-  "started_at": "2026-06-26T19:20:24",
-  "finished_at": "2026-06-26T19:24:06",
+  "started_at": "2026-06-27T01:29:17",
+  "finished_at": "2026-06-27T01:32:21",
   "scope": "full",
   "retrain": false,
   "seed": 42,
@@ -16,7 +16,7 @@
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 0.823824405670166
+      "elapsed_seconds": 0.6605145931243896
     },
     {
       "name": "Construir dataset limpio",
@@ -27,7 +27,7 @@
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 2.0385067462921143
+      "elapsed_seconds": 2.031271457672119
     },
     {
       "name": "Construir features",
@@ -38,7 +38,7 @@
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 33.808377265930176
+      "elapsed_seconds": 27.770638465881348
     },
     {
       "name": "Predecir partidos pendientes",
@@ -49,7 +49,7 @@
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 1.8488600254058838
+      "elapsed_seconds": 2.378868818283081
     },
     {
       "name": "Construir referencias web/Colab",
@@ -60,7 +60,7 @@
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 0.4159059524536133
+      "elapsed_seconds": 0.4171602725982666
     },
     {
       "name": "Construir reporte maestro",
@@ -71,7 +71,7 @@
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 0.41455602645874023
+      "elapsed_seconds": 0.407944917678833
     },
     {
       "name": "Listar partidos de grupo V2",
@@ -82,7 +82,7 @@
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 0.5921306610107422
+      "elapsed_seconds": 0.5882916450500488
     },
     {
       "name": "Simular grupos fixed V2",
@@ -97,7 +97,7 @@
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 1.5124518871307373
+      "elapsed_seconds": 1.512845754623413
     },
     {
       "name": "Construir tablas de grupo V2",
@@ -110,7 +110,7 @@
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 0.7399587631225586
+      "elapsed_seconds": 0.6754240989685059
     },
     {
       "name": "Construir Round of 32 V2",
@@ -123,7 +123,7 @@
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 0.4512810707092285
+      "elapsed_seconds": 0.4533426761627197
     },
     {
       "name": "Simular torneo una vez V2",
@@ -138,7 +138,7 @@
       "required": false,
       "status": "OK",
       "returncode": 0,
-      "elapsed_seconds": 178.68568873405457
+      "elapsed_seconds": 147.271910905838
     }
   ],
   "pending_predictions": {
