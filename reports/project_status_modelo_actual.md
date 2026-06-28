@@ -1,6 +1,6 @@
 # Estado actual del modelo Mundial 2026
 
-Generado: `2026-06-27T18:52:50`
+Generado: `2026-06-28T01:41:36`
 
 ## 1. Resumen ejecutivo
 
